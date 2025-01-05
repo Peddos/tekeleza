@@ -772,3 +772,23 @@ header .logo img {
 .membership-form button:hover {
     background: #b30000; /* Darker red on hover */
 }
+/* For screens smaller than 768px (e.g., tablets and phones) */
+@media (max-width: 768px) {
+    body {
+      font-size: 16px; /* Adjust font size */
+    }
+  
+    .container {
+      padding: 10px; /* Adjust padding */
+    }
+  
+    header, footer {
+      text-align: center; /* Center-align header and footer */
+    }
+  
+    .nav {
+      display: flex;
+      flex-direction: column; /* Stack navigation links vertically */
+    }
+  }
+  
