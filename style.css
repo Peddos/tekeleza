@@ -1,0 +1,774 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation */
+header {
+    background: #232020ea;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: #f4f4f4;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.hero p {
+    color: #555;
+    margin: 1rem 0;
+}
+
+.hero .btn {
+    text-decoration: none;
+    background: #d50000;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #333;
+    color: white;
+}
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: block;
+        cursor: pointer;
+    }
+}
+.testimonials {
+    padding: 2rem;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.testimonial {
+    margin: 1rem 0;
+    font-style: italic;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.about {
+    padding: 3rem 1rem;
+    background: #f9f9f9; /* Light background to differentiate */
+    color: #333;
+}
+
+.about h2 {
+    text-align: center;
+    color: #d50000; /* Bold red for headings */
+    margin-bottom: 2rem;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.about-content div {
+    padding: 1rem;
+    border: 1px solid #ddd; /* Light border for separation */
+    border-radius: 8px;
+    background: white;
+}
+
+.about-content h3 {
+    color: #000; /* Black for subheadings */
+    margin-bottom: 1rem;
+}
+
+.about-content ul {
+    padding-left: 1.5rem;
+    list-style: disc;
+}
+
+.about-content p, .about-content li {
+    line-height: 1.6;
+}
+/* Programs Section Styles */
+.programs {
+    padding: 3rem 1rem;
+    background: #fff;
+    color: #333;
+    text-align: center;
+}
+
+.programs h2 {
+    font-size: 2.5rem;
+    color: #d50000; /* Tekeleza Red for header */
+    margin-bottom: 1rem;
+}
+
+.programs-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.program-item {
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px;
+    padding: 1.5rem;
+    background: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.program-icon {
+    width: 60px;
+    margin-bottom: 1rem;
+}
+
+.program-item h3 {
+    font-size: 1.5rem;
+    color: #000; /* Black for subheadings */
+    margin-bottom: 1rem;
+}
+
+.program-item p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.program-item .btn {
+    text-decoration: none;
+    background: #d50000; /* Red button */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.program-item .btn:hover {
+    background: #b30000; /* Darker red on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .programs h2 {
+        font-size: 2rem;
+    }
+
+    .program-item {
+        padding: 1rem;
+    }
+}
+/* Contact Section Styles */
+.contact {
+    padding: 3rem 1rem;
+    background: #fff;
+    color: #333;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    color: #d50000; /* Tekeleza Red for header */
+    margin-bottom: 1rem;
+}
+
+.contact-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* Container to align form and contact info */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+/* Contact Form Styles */
+.contact-form {
+    flex: 1 1 45%;
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    font-size: 1rem;
+    color: #000;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact-form .btn {
+    text-decoration: none;
+    background: #d50000; /* Red button */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.contact-form .btn:hover {
+    background: #b30000; /* Darker red on hover */
+}
+
+/* Contact Information Styles */
+.contact-info {
+    flex: 1 1 45%;
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h3 {
+    font-size: 1.8rem;
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.social-icon img {
+    width: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-form,
+    .contact-info {
+        flex: 1 1 100%;
+        margin-bottom: 2rem;
+    }
+}
+/* Mentorship Page Styles */
+.mentorship-details {
+    padding: 2rem 1rem;
+    background: #fff;
+    color: #333;
+    text-align: center;
+}
+
+.mentorship-details h2 {
+    font-size: 2.5rem;
+    color: #d50000; /* Tekeleza Red */
+    margin-bottom: 1rem;
+}
+
+.mentorship-details p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.mentorship-details h3 {
+    font-size: 1.8rem;
+    color: #000;
+    margin-top: 2rem;
+}
+
+.mentorship-details ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.mentorship-details ul li {
+    margin-bottom: 1rem;
+}
+
+/* Mentorship Form Styles */
+.mentorship-form {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.mentorship-form label {
+    font-size: 1rem;
+    color: #000;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.mentorship-form input,
+.mentorship-form select {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.mentorship-form .btn {
+    background: #d50000; /* Tekeleza Red */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.mentorship-form .btn:hover {
+    background: #b30000; /* Darker red on hover */
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 1rem;
+}
+/* Networking Events Page Styles */
+.networking-details {
+    padding: 2rem 1rem;
+    background: #fff;
+    color: #333;
+    text-align: center;
+}
+
+.networking-details h2 {
+    font-size: 2.5rem;
+    color: #d50000; /* Tekeleza Red */
+    margin-bottom: 1rem;
+}
+
+.networking-details p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.networking-details h3 {
+    font-size: 1.8rem;
+    color: #000;
+    margin-top: 2rem;
+}
+
+.event {
+    background-color: #f9f9f9;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.event h3 {
+    font-size: 2rem;
+    color: #d50000; /* Tekeleza Red */
+}
+
+.event p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.event a.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #d50000; /* Tekeleza Red */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.event a.btn:hover {
+    background: #b30000; /* Darker red on hover */
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 1rem;
+}
+/* Community Projects Page Styles */
+.projects-details {
+    padding: 2rem 1rem;
+    background: #fff;
+    color: #333;
+    text-align: center;
+}
+
+.projects-details h2 {
+    font-size: 2.5rem;
+    color: #d50000; /* Tekeleza Red */
+    margin-bottom: 1rem;
+}
+
+.projects-details p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.projects-details h3 {
+    font-size: 1.8rem;
+    color: #000;
+    margin-top: 2rem;
+}
+
+.project {
+    background-color: #f9f9f9;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project h3 {
+    font-size: 2rem;
+    color: #d50000; /* Tekeleza Red */
+}
+
+.project p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.project a.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #d50000; /* Tekeleza Red */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.project a.btn:hover {
+    background: #b30000; /* Darker red on hover */
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 1rem;
+}
+header .logo img {
+    width: 150px; /* Adjust the size of the logo */
+    height: auto;
+    margin-left: -32px;
+    margin-bottom: -20px;
+    margin-top: -20px;
+    
+}
+/* Donation Page Styles */
+.donate-now {
+    padding: 2rem 1rem;
+    text-align: center;
+    background: #fff;
+    color: #333;
+}
+
+.donate-now h2 {
+    font-size: 2rem;
+    color: #d50000; /* Tekeleza Red */
+    margin-bottom: 1rem;
+}
+
+.donate-now p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.donation-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.option {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 300px;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.option h3 {
+    font-size: 1.5rem;
+    color: #d50000;
+    margin-bottom: 0.5rem;
+}
+
+.option p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.option .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #d50000; /* Tekeleza Red */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.option .btn:hover {
+    background: #b30000; /* Darker red on hover */
+}
+/* Get Involved Page Styles */
+.get-involved {
+    padding: 2rem 1rem;
+    background: #fff;
+    text-align: center;
+    color: #333;
+}
+
+.get-involved h2 {
+    font-size: 2rem;
+    color: #d50000; /* Tekeleza Red */
+    margin-bottom: 1rem;
+}
+
+.involvement-option {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.involvement-option h3 {
+    font-size: 1.5rem;
+    color: #d50000;
+}
+
+.involvement-option p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.involvement-option .btn {
+    display: inline-block;
+    background: #d50000;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.involvement-option .btn:hover {
+    background: #b30000;
+}
+/* Join Community Page Styles */
+.join-community {
+    padding: 2rem 1rem;
+    background: #fff;
+    text-align: center;
+    color: #333;
+}
+
+.join-community h2 {
+    font-size: 2rem;
+    color: #d50000; /* Tekeleza Red */
+    margin-bottom: 1rem;
+}
+
+.join-community ul {
+    list-style-type: none;
+    padding: 0;
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.membership-form {
+    padding: 2rem 1rem;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 2rem auto;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.membership-form h2 {
+    font-size: 1.8rem;
+    color: #d50000;
+    text-align: center;
+}
+
+.membership-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.membership-form label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.membership-form input, 
+.membership-form select, 
+.membership-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.membership-form button {
+    display: block;
+    width: 100%;
+    background: #d50000; /* Tekeleza Red */
+    color: #fff;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.membership-form button:hover {
+    background: #b30000; /* Darker red on hover */
+}
