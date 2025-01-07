@@ -326,7 +326,6 @@ footer {
     transform: scale(1.2);
 }
 
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .contact-container {
@@ -337,11 +336,6 @@ footer {
     .contact-info {
         flex: 1 1 100%;
         margin-bottom: 2rem;
-    }
-    /* For screens smaller than 768px (e.g., tablets and phones) */
-
-    body {
-      font-size: 16px; /* Adjust font size */
     }
 }
 /* Mentorship Page Styles */
@@ -784,11 +778,12 @@ header .logo img {
       font-size: 16px; /* Adjust font size */
     }
   
-    
+    .container {
+      padding: 10px; /* Adjust padding */
+    }
   
     header, footer {
       text-align: center; /* Center-align header and footer */
-      width: 100%; /* Ensures header spans across the screen */
     }
   
     .nav {
@@ -800,11 +795,17 @@ header .logo img {
     display: flex;
     flex-wrap: wrap; /* Allow items to wrap on smaller screens */
     justify-content: space-between;
-    width: 100%; /* Ensures container takes up full width */
-    padding: 10px; /* Adjust padding */
   }
   
   .item {
     flex: 1 1 200px; /* Items will take up at least 200px but can grow */
   }
+  .container {
+    width: 100%; /* Ensures container takes up full width */
+  }
   
+  header {
+    width: 100%; /* Ensures header spans across the screen */
+  }
+     /* Donation Page Styles */
+  .donate-now {zX
