@@ -4,13 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mentorship Programs - Tekeleza Hub</title>
-    <link rel="stylesheet" href="css/style.css"> <!-- Link to your main CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-       /* Mentorship Page Styles */
-
-.navbar {
-            background-color:  #019D91;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Navbar styles (unchanged as requested) */
+        .navbar {
+            background-color: #019D91;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -24,58 +37,480 @@
             z-index: 1000;
         }
 
-.logo img {
-    height: 80px;
-}
+        .logo img {
+            height: 80px;
+        }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-}
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
 
-.nav-links li {
-    margin: 0 15px;
-}
+        .nav-links li {
+            margin: 0 15px;
+        }
 
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s;
-}
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
 
-.nav-links a:hover {
-    color: #ffdd57;
-}
+        .nav-links a:hover {
+            color: #ffdd57;
+        }
 
-.menu-toggle {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-}
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
 
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: #019D91;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        width: 150px;
-        text-align: left;
-        padding: 10px;
-    }
-    
-    .nav-links.active {
-        display: flex;
-    }
-    
-    .menu-toggle {
-        display: block;
-    }
-}
-</style>
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: #019D91;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                width: 150px;
+                text-align: left;
+                padding: 10px;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(120deg, rgba(1,157,145,0.9) 0%, rgba(0,131,121,0.85) 100%), 
+                        url('https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 160px 20px 100px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 极速 7zm48 25c3.866 0 极速-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-极速.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-极速-4 1.79-4 4 1.79 4 4 4zm29 22c2.极速6 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/s极速g%3E");
+            opacity: 0.6;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1.2s ease-out;
+        }
+        
+        /* Mentorship Section */
+        .mentorship-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #019D91;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #019d91, #ffdd57);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* How It Works Section */
+        .how-it-works {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .how-it-works::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #019d91, #ffdd57, #019d91);
+        }
+        
+        .how-it-works h2 {
+            font-size: 2.2rem;
+            color: #019D91;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .how-it-works p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        /* Mentorship Types */
+        .mentorship-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .mentorship-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .mentorship-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .mentorship-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(1, 157, 145, 0.2);
+        }
+        
+        .mentorship-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, #019d91, #ffdd57);
+        }
+        
+        .mentorship-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(1, 157, 145, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #019D91;
+        }
+        
+        .mentorship-card h3 {
+            font-size: 1.5rem;
+            color: #019D91;
+            margin-bottom: 15px;
+        }
+        
+        .mentorship-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Benefits Section */
+        .benefits-section {
+            background: linear-gradient(135deg, #017d73 0%, #019d91 100%);
+            padding: 80px 20px;
+            color: white;
+            border-radius: 20px;
+            margin-bottom: 60px;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 50px auto 0;
+        }
+        
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-card p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        /* Mentors Showcase */
+        .mentors-section {
+            margin-bottom: 60px;
+        }
+        
+        .mentors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .mentor-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+        
+        .mentor-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(1, 157, 145, 0.2);
+        }
+        
+        .mentor-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .mentor-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .mentor-card:hover .mentor-image img {
+            transform: scale(1.1);
+        }
+        
+        .mentor-info {
+            padding: 25px;
+        }
+        
+        .mentor-info h3 {
+            font-size: 1.5rem;
+            color: #019D91;
+            margin-bottom: 10px;
+        }
+        
+        .mentor-info p {
+            color: #666;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .mentor-specialties {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        .specialty {
+            background: rgba(1, 157, 145, 0.1);
+            color: #019D91;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 20px;
+            text-align: center;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.5rem;
+            color: #019D91;
+            margin-bottom: 20px;
+        }
+        
+        .cta-content p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #019D91, #017a74);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(1, 157, 145, 0.3);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(1, 157, 145, 0.4);
+        }
+        
+        /* Footer */
+        .footer {
+            background: #03332f;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .footer p {
+            opacity: 0.8;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .mentorship-types, .benefits-grid, .mentors-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .how-it-works {
+                padding: 30px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -88,54 +523,205 @@
             <li><a href="story.html">Our Story</a></li>
             <li><a href="donate.html">Donate</a></li>
             <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="#"></a></li>
         </ul>
         <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-        </nav>
+    </nav>
+    
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Mentorship Programs</h1>
+            <p>Connecting you with experienced professionals in the tech industry to guide you on your journey.</p>
+        </div>
+    </div>
+
+    <div class="mentorship-container">
+        <!-- How It Works Section -->
+        <div class="how-it-works">
+            <h2>How Our Mentorship Works</h2>
+            <p>At <strong>Tekeleza Hub</strong>, we believe in the power of mentorship. Our programs connect tech enthusiasts with experienced industry professionals who provide valuable guidance, feedback, and resources to help you grow and succeed in your tech career.</p>
+        </div>
         
-        <script>
+        <!-- Mentorship Types -->
+        <div class="section-title">
+            <h2>Types of Mentorship</h2>
+            <p>We offer different mentorship formats to suit your needs and goals</p>
+        </div>
+        
+        <div class="mentorship-types">
+            <div class="mentorship-card">
+                <div class="mentorship-icon">
+                    <i class="fas fa-user-friends"></i>
+                </div>
+                <h3>One-on-One Mentorship</h3>
+                <p>Personalized mentorship where you'll work closely with a dedicated mentor to achieve your specific goals and receive individualized attention.</p>
+            </div>
+            
+            <div class="mentorship-card">
+                <div class="mentorship-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Group Mentorship</h3>
+                <p>Interactive group sessions with multiple mentees and mentors, fostering collaboration and peer learning in a supportive environment.</p>
+            </div>
+            
+            <div class="mentorship-card">
+                <div class="mentorship-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Short-Term Mentorship</h3>
+                <p>A focused mentorship program that lasts for a few weeks, perfect for specific skill development or project guidance.</p>
+            </div>
+            
+            <div class="mentorship-card">
+                <div class="mentorship-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <h3>Long-Term Mentorship</h3>
+                <p>A comprehensive mentorship lasting several months, providing in-depth guidance for career development and long-term growth.</p>
+            </div>
+        </div>
+        
+        <!-- Benefits Section -->
+        <div class="benefits-section">
+            <div class="section-title">
+                <h2 style="color: white;">Benefits of Our Mentorship Program</h2>
+                <p style="color: rgba(255,255,255,0.9);">We provide exceptional mentorship experiences that deliver real value</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Expert Guidance</h3>
+                    <p>Learn from industry professionals with years of practical experience who are dedicated to your success.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Skill Development</h3>
+                    <p>Develop both technical expertise and essential soft skills needed to thrive in the tech industry.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Networking Opportunities</h3>
+                    <p>Connect with like-minded individuals, industry experts, and potential employers through our community.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Career Advancement</h3>
+                    <p>Receive career guidance, portfolio reviews, and access to exclusive job opportunities in the tech sector.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Featured Mentors -->
+        <div class="mentors-section">
+            <div class="section-title">
+                <h2>Featured Mentors</h2>
+                <p>Meet some of our experienced mentors who are ready to guide you</p>
+            </div>
+            
+            <div class="mentors-grid">
+                <div class="mentor-card">
+                    <div class="mentor-image">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Sarah Johnson">
+                    </div>
+                    <div class="mentor-info">
+                        <h3>Sarah Johnson</h3>
+                        <p>Senior Software Engineer at TechCorp</p>
+                        <div class="mentor-specialties">
+                            <span class="specialty">Web Development</span>
+                            <span class="specialty">JavaScript</span>
+                            <span class="specialty">React</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mentor-card">
+                    <div class="mentor-image">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Michael Chen">
+                    </div>
+                    <div class="mentor-info">
+                        <h3>Michael Chen</h3>
+                        <p>Data Scientist at DataWorks</p>
+                        <div class="mentor-specialties">
+                            <span class="specialty">Machine Learning</span>
+                            <span class="specialty">Python</span>
+                            <span class="specialty">AI</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mentor-card">
+                    <div class="mentor-image">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="David Omondi">
+                    </div>
+                    <div class="mentor-info">
+                        <h3>David Omondi</h3>
+                        <p>Cybersecurity Specialist at SecureNet</p>
+                        <div class="mentor-specialties">
+                            <span class="specialty">Cybersecurity</span>
+                            <span class="specialty">Ethical Hacking</span>
+                            <span class="specialty">Network Security</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <div class="cta-content">
+                <h2>Ready to Find Your Mentor?</h2>
+                <p>Join our mentorship program today and take the next step in your tech career journey</p>
+                <a href="contact.html" class="cta-btn">Get Started</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; 2023 Tekeleza Hub. All rights reserved.</p>
+    </div>
+
+    <script>
+        // Menu toggle functionality
         const menuToggle = document.getElementById('menu-toggle');
         const navLinks = document.getElementById('nav-links');
         
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
-        </script>
-
-         <!-- Header Section -->
-         <header class="bg-gradient-to-r from-teal-500 to-green-400 text-white text-center py-24">
-            <h1 class="text-3xl font-bold">Mentorship Programs</h1>
-            <p class="mt-2 text-base">Connecting you with experienced professionals in the tech industry to guide you on your journey.</p>
-        </header>
         
-
-    <!-- Mentorship Details Section -->
-    <section class="max-w-4xl mx-auto mt-12 p-8 bg-white rounded-lg shadow-lg">
-        <h2 class="text-3xl font-semibold text-teal-600">How Our Mentorship Works</h2>
-        <p class="mt-4 text-lg leading-relaxed">
-            At <span class="font-bold">Tekeleza Hub</span>, we believe in the power of mentorship. Our programs connect tech enthusiasts with experienced industry professionals who provide valuable guidance, feedback, and resources to help you grow and succeed in your tech career.
-        </p>
-
-        <!-- Mentorship Types -->
-        <h3 class="mt-8 text-2xl font-semibold text-teal-500">Types of Mentorship</h3>
-        <ul class="mt-4 space-y-3">
-            <li class="flex items-start"><span class="text-green-500 text-xl mr-2">✔</span><strong>One-on-One Mentorship:</strong> Personalized mentorship where you’ll work closely with a mentor.</li>
-            <li class="flex items-start"><span class="text-green-500 text-xl mr-2">✔</span><strong>Group Mentorship:</strong> Interactive group sessions with multiple mentees and mentors.</li>
-            <li class="flex items-start"><span class="text-green-500 text-xl mr-2">✔</span><strong>Short-Term Mentorship:</strong> A focused mentorship program that lasts for a few weeks.</li>
-            <li class="flex items-start"><span class="text-green-500 text-xl mr-2">✔</span><strong>Long-Term Mentorship:</strong> A more comprehensive mentorship lasting several months, with in-depth guidance.</li>
-        </ul>
-
-        <!-- Benefits -->
-        <h3 class="mt-8 text-2xl font-semibold text-teal-500">Benefits of Joining the Mentorship Program</h3>
-        <ul class="mt-4 space-y-3">
-            <li class="flex items-start"><span class="text-green-500 text-xl mr-2">✔</span>Access to industry professionals</li>
-            <li class="flex items-start"><span class="text-green-500 text-xl mr-2">✔</span>Develop both technical and soft skills</li>
-            <li class="flex items-start"><span class="text-green-500 text-xl mr-2">✔</span>Build a network with other aspiring tech leaders</li>
-            <li class="flex items-start"><span class="text-green-500 text-xl mr-2">✔</span>Receive career guidance and job opportunities</li>
-            <li class="flex items-start"><span class="text-green-500 text-xl mr-2">✔</span>Get hands-on advice for personal projects</li>
-        </ul>
-    </section>
-
-    
+        // Animate cards on scroll
+        const mentorshipCards = document.querySelectorAll('.mentorship-card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+        
+        mentorshipCards.forEach(card => {
+            observer.observe(card);
+        });
+        
+        // Add staggered animation delay
+        mentorshipCards.forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+        });
+    </script>
 </body>
 </html>

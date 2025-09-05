@@ -6,10 +6,18 @@
     <link rel="icon" href="images/tekeleza-logo.jpg" type="image/x-icon" />
     <title>Tekeleza: Empowering Innovators</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-       
-.navbar {
-            background-color:  #019D91;
+        /* Base styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .navbar {
+            background-color: #019D91;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -23,117 +31,387 @@
             z-index: 1000;
         }
 
-.logo img {
-    height: 80px;
-}
+        .logo img {
+            height: 80px;
+        }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-}
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
 
-.nav-links li {
-    margin: 0 15px;
-}
+        .nav-links li {
+            margin: 0 15px;
+        }
 
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s;
-}
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
 
-.nav-links a:hover {
-    color: #ffdd57;
-}
+        .nav-links a:hover {
+            color: #ffdd57;
+        }
 
-.menu-toggle {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-}
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
 
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: #019D91;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        width: 150px;
-        text-align: left;
-        padding: 10px;
-    }
-    
-    .nav-links.active {
-        display: flex;
-    }
-    
-    .menu-toggle {
-        display: block;
-    }
-}
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: #019D91;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                width: 150px;
+                text-align: left;
+                padding: 10px;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+        }
         
+        /* Hero section */
+        .hero {
+            background: linear-gradient(120deg, rgba(1,157,145,0.9) 0%, rgba(0,131,121,0.85) 100%), 
+                        url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 160px 20px 100px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 极速 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 极速 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.6;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1.2s ease-out;
+        }
+        
+        /* Content section */
         .content {
-            margin-top: 100px;
+            margin-top: 0;
             padding: 20px;
         }
         
+        /* Donate section */
         .donate-now {
-            padding: 2rem 1rem;
+            padding: 4rem 2rem;
             text-align: center;
-            background: #f9f9f9;
+            background: white;
             color: #333;
-            border-radius: 10px;
-            margin: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            margin: -50px 20px 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 10;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .donate-now h2 {
+            font-size: 2.5rem;
+            color: #019d91;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .donate-now h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #019d91, #ffdd57);
+            border-radius: 2px;
+        }
+        
+        .donate-now > p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
         }
         
         .donation-options {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 2rem;
+            gap: 2.5rem;
             margin-top: 2rem;
         }
         
         .option {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 1.5rem;
-            width: 300px;
-            text-align: left;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            background: linear-gradient(145deg, #ffffff, #f5f5f5);
+            border: none;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            width: 320px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .option::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: linear-gradient(135deg, #019d91, #017d73);
+            transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+            z-index: -1;
+            opacity: 0;
         }
         
         .option:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            color: white;
+        }
+        
+        .option:hover::before {
+            height: 100%;
+            opacity: 1;
+        }
+        
+        .option:hover h3,
+        .option:hover p,
+        .option:hover .icon-wrapper {
+            color: white;
         }
         
         .option h3 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: #019d91;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            transition: color 0.4s ease;
+        }
+        
+        .option p {
+            margin-bottom: 1rem;
+            transition: color 0.4s ease;
+        }
+        
+        .icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background: rgba(1, 157, 145, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            transition: all 0.4s ease;
+        }
+        
+        .icon-wrapper i {
+            font-size: 2.5rem;
+            color: #019d91;
+            transition: color 0.4s ease;
+        }
+        
+        .option:hover .icon-wrapper {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .option:hover .icon-wrapper i {
+            color: white;
         }
         
         .btn {
             display: inline-block;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
             background: #019d91;
             color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 5px;
+            padding: 1rem 2rem;
+            border-radius: 50px;
             font-size: 1.1rem;
+            font-weight: 500;
             cursor: pointer;
             text-decoration: none;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(1, 157, 145, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: #017d73;
+            transition: all 0.4s ease;
+            z-index: -1;
         }
         
         .btn:hover {
-            background: #017d73;
+            box-shadow: 0 8px 20px rgba(1, 157, 145, 0.4);
+            transform: translateY(-3px);
+        }
+        
+        .btn:hover::before {
+            width: 100%;
+        }
+        
+        /* Impact section */
+        .impact {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #017d73 0%, #019d91 100%);
+            color: white;
+            border-radius: 20px;
+            margin: 40px 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .impact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .impact-stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 3rem;
+        }
+        
+        .stat {
+            width: 200px;
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #ffdd57, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Floating animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Fade in animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .donate-now {
+                margin: -30px 15px 30px;
+                padding: 3rem 1.5rem;
+            }
+            
+            .donation-options {
+                gap: 1.5rem;
+            }
+            
+            .option {
+                width: 100%;
+                max-width: 350px;
+            }
+            
+            .impact-stats {
+                gap: 2rem;
+            }
+            
+            .stat {
+                width: 140px;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
@@ -151,50 +429,126 @@
             <li><a href="#"></a></li>
         </ul>
         <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-        </nav>
-        
-        <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const navLinks = document.getElementById('nav-links');
-        
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        </script>
+    </nav>
+    
+    <div class="hero">
+        <h1>Support Tekeleza Hub</h1>
+        <p>Your contribution empowers individuals and communities through technology and innovation.</p>
+    </div>
 
-    
     <div class="content">
-        <header class="text-center py-8">
-            <h1 class="text-4xl font-bold text-gray-800">Support Tekeleza Hub</h1>
-            <p class="text-lg text-gray-600">Your contribution empowers individuals and communities through technology and innovation.</p>
-        </header>
-    
         <section class="donate-now">
             <h2>Why Donate?</h2>
             <p>At Tekeleza Hub, your donations directly support our efforts to bridge the digital divide, mentor aspiring tech leaders, and drive impactful community projects.</p>
             
             <h2>How to Donate</h2>
             <div class="donation-options">
-                <div class="option">
+                <div class="option floating animate-on-scroll">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
                     <h3>Mobile Payment</h3>
                     <p><strong>MPESA:</strong> PayBill 247247</p>
                     <p>Account Number: 0310186048481</p>
                 </div>
-                <div class="option">
+                <div class="option floating animate-on-scroll">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-university"></i>
+                    </div>
                     <h3>Bank Transfer</h3>
                     <p><strong>Bank Name:</strong> Equity Bank</p>
                     <p><strong>Account Name:</strong> JOHN NJOGU</p>
                     <p><strong>Account Number:</strong> 0310186048481</p>
                 </div>
-                <div class="option">
+                <div class="option floating animate-on-scroll">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-globe"></i>
+                    </div>
                     <h3>Online Payment</h3>
                     <p>Use our secure online payment platform to donate via credit/debit card or PayPal.</p>
                     <a href="https://www.paypal.com/ncp/payment/J5YKDLFPV4J7Y" class="btn" target="_blank">Donate Online</a>
                 </div>
             </div>
         </section>
+        
+        <section class="impact animate-on-scroll">
+            <h2>Your Impact</h2>
+            <div class="impact-stats">
+                <div class="stat">
+                    <div class="stat-number" id="stat1">0</div>
+                    <div class="stat-label">Lives Changed</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" id="stat2">0</div>
+                    <div class="stat-label">Projects Funded</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" id="stat3">0</div>
+                    <div class="stat-label">Communities Reached</div>
+                </div>
+            </div>
+        </section>
     </div>
     
-  
+    <script>
+        // Menu toggle functionality
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Animate on scroll functionality
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Animate stats counting if it's the impact section
+                    if (entry.target.classList.contains('impact')) {
+                        animateStats();
+                    }
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+        
+        animateElements.forEach(element => {
+            observer.observe(element);
+        });
+        
+        // Animate stats counting
+        function animateStats() {
+            const stat1 = document.getElementById('stat1');
+            const stat2 = document.getElementById('stat2');
+            const stat3 = document.getElementById('stat3');
+            
+            animateValue(stat1, 0, 500, 2000);
+            animateValue(stat2, 0, 47, 2000);
+            animateValue(stat3, 0, 12, 2000);
+        }
+        
+        function animateValue(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                element.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+        
+        // Add floating animation to donation options with delays
+        document.querySelectorAll('.floating').forEach((element, index) => {
+            element.style.animationDelay = `${index * 0.2}s`;
+        });
+    </script>
 </body>
 </html>

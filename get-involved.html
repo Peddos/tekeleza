@@ -4,11 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get Involved - Tekeleza Hub</title>
-    <link rel="stylesheet" href="css/style.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-
-.navbar {
-            background-color:  #019D91;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: '极速oppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Navbar styles (unchanged as requested) */
+        .navbar {
+            background-color: #019D91;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -22,109 +36,496 @@
             z-index: 1000;
         }
 
-.logo img {
-    height: 80px;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.nav-links li {
-    margin: 0 15px;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: #ffdd57;
-}
-
-.menu-toggle {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: #019D91;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        width: 150px;
-        text-align: left;
-        padding: 10px;
-    }
-    
-    .nav-links.active {
-        display: flex;
-    }
-    
-    .menu-toggle {
-        display: block;
-    }
-}
-        /* Get Involved Page Styles */
-        .get-involved {
-            padding: 2rem 1rem;
-            background: #fff;
-            text-align: center;
-            color: #333;
+        .logo img {
+            height: 80px;
         }
-        
-        .get-involved h2 {
-            font-size: 2rem;
-            color: #019d91; /* Tekeleza Red */
-            margin-bottom: 1rem;
+
+        .nav-links {
+            list-style: none;
+            display: flex;
         }
-        
-        .involvement-option {
-            margin: 2rem 0;
-            padding: 1.5rem;
-            background: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: left;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+
+        .nav极速inks li {
+            margin: 0 15px;
         }
-        
-        .involvement-option h3 {
-            font-size: 1.5rem;
-            color: #019d91;
-        }
-        
-        .involvement-option p {
-            font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 1rem;
-        }
-        
-        .involvement-option .btn {
-            display: inline-block;
-            background: #019d91;
-            color: #fff;
-            padding: 0.75rem 1.5rem;
-            border-radius: 5px;
-            font-size: 1rem;
+
+        .nav-links a {
+            color: white;
             text-decoration: none;
-            transition: background 0.3s ease;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffdd57;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: #019D91;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                width: 150px;
+                text-align: left;
+                padding: 10px;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
         }
         
-        .involvement-option .btn:hover {
-            background: #019d91;
-        }</style>
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(120deg, rgba(1,157,145,0.9) 0%, rgba(0,131,121,0.85) 100%), 
+                        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 160px 20px 100px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 极速.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3极速 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22极速2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.6;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1.2s ease-out;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+            animation: fadeInUp 1.4s ease-out;
+        }
+        
+        .hero-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: #019D91;
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.4);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            backdrop-filter: blur(10px);
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #019D91;
+        }
+        
+        /* Involvement Section */
+        .involvement-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #019D91;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #019d91, #ffdd57);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .involvement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .involvement-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .involvement-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .involvement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(1, 157, 145, 0.2);
+        }
+        
+        .involvement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #019d91, #ffdd57, #019d91);
+        }
+        
+        .involvement-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(1, 157, 145, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2.5rem;
+            color: #019D91;
+            transition: all 0.4s ease;
+        }
+        
+        .involvement-card:hover .involvement-icon {
+            background: #019D91;
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .involvement-card h3 {
+            font-size: 1.8rem;
+            color: #019D91;
+            margin-bottom: 15px;
+        }
+        
+        .involvement-card p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .involvement-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #019D91, #017a74);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(1, 157, 145, 0.3);
+        }
+        
+        .involvement-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(1, 157, 145, 0.4);
+        }
+        
+        /* Impact Section */
+        .impact-section {
+            background: linear-gradient(135deg, #017d73 0%, #019d91 100%);
+            padding: 80px 20px;
+            color: white;
+            text-align: center;
+            border-radius: 20px;
+            margin-bottom: 60px;
+        }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 50px auto 0;
+        }
+        
+        .impact-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+        
+        .impact-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .impact-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #ffdd57, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .impact-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            margin-bottom: 60px;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 4rem;
+            color: rgba(1, 157, 145, 0.1);
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-text {
+            color: #555;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            color: #019D91;
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 20px;
+            text-align: center;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.5rem;
+            color: #019D91;
+            margin-bottom: 20px;
+        }
+        
+        .cta-content p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #019D91, #017a74);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(1, 157, 145, 0.3);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12极速 25px rgba(1, 157, 145, 0.4);
+        }
+        
+        /* Footer */
+        .footer {
+            background: #03332f;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .footer p {
+            opacity: 0.8;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .involvement-grid, .impact-grid, .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -137,66 +538,237 @@
             <li><a href="story.html">Our Story</a></li>
             <li><a href="donate.html">Donate</a></li>
             <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="#"></a></li>
         </ul>
         <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-        </nav>
+    </nav>
+    
+    <div class="hero">
+        <div class="极速ero-content">
+            <h1>Get Involved</h1>
+            <p>Join us in driving innovation and empowering communities through technology and collaboration.</p>
+            <div class="hero-buttons">
+                <a href="#opportunities" class="hero-btn btn-primary">Explore Opportunities</a>
+                <a href="#impact" class="hero-btn btn-secondary">See Our Impact</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="involvement-container" id="opportunities">
+        <div class="section-title">
+            <h2>Ways to Get Involved</h2>
+            <p>Discover how you can contribute to our mission and make a difference</p>
+        </div>
         
-        <script>
+        <div class="involvement-grid">
+            <div class="involvement-card">
+                <div class="involvement-icon">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+                <h3>Volunteer</h3>
+                <p>Become a part of our team by volunteering your time and skills. Whether you're a tech expert or someone passionate about making a difference, we welcome your support.</p>
+                <a href="contact.html" class="involvement-btn">Sign Up to Volunteer</a>
+            </div>
+            
+            <div class="involvement-card">
+                <div class="involvement-icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h3>Become a Mentor</h3>
+                <p>Help nurture the next generation of tech leaders. Share your expertise, guide aspiring innovators, and inspire positive change through mentorship.</p>
+                <a href="mentorship.html" class="involvement-btn">Learn About Mentorship</a>
+            </div>
+            
+            <div class="involvement-card">
+                <div class="involvement-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>Partner with Us</h3>
+                <p>Collaborate with Tekeleza Hub to bring impactful programs and projects to life. Let's work together to create sustainable change.</p>
+                <a href="contact.html" class="involvement-btn">Contact Us for Partnerships</a>
+            </div>
+            
+            <div class="involvement-card">
+                <div class="involvement-icon">
+                    <i class="fas fa-donate"></i>
+                </div>
+                <h3>Donate</h3>
+                <p>Your contributions enable us to continue our mission of empowering individuals and communities through technology.</p>
+                <a href="donate.html" class="involvement-btn">Make a Donation</a>
+            </div>
+            
+            <div class="involvement-card">
+                <div class="involvement-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Join Our Community</h3>
+                <p>Be part of a vibrant and inclusive tech community. Stay updated on events, workshops, and opportunities to collaborate.</p>
+                <a href="#" class="involvement-btn">Join the Community</a>
+            </div>
+            
+            <div class="involvement-card">
+                <div class="involvement-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Share Ideas</h3>
+                <p>Have an idea for a project or initiative? We're always looking for innovative ideas that align with our mission.</p>
+                <a href="contact.html" class="involvement-btn">Share Your Idea</a>
+            </div>
+        </div>
+        
+        <!-- Impact Section -->
+        <div class="impact-section" id="impact">
+            <div class="section-title">
+                <h2 style="color: white;">Our Impact</h2>
+                <p style="color: rgba(255,255,255,0.9);">Together, we're making a real difference in communities</p>
+            </div>
+            
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <div class="impact-number" id="volunteers-count">0</div>
+                    <div class="impact-label">Active Volunteers</div>
+                </div>
+                
+                <div class="impact-item">
+                    <div class="impact-number" id="projects-count">0</div>
+                    <div class="impact-label">Community Projects</div>
+                </div>
+                
+                <div class="impact-item">
+                    <div class="impact-number" id="people-helped">0</div>
+                    <div class="impact-label">People Helped</div>
+                </div>
+                
+                <div class="impact-item">
+                    <div class="impact-number" id="partners-count">0</div>
+                    <div class="impact-label">Partnerships</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Testimonials Section -->
+        <div class="testimonials-section">
+            <div class="section-title">
+                <h2>What Our Volunteers Say</h2>
+                <p>Hear from people who have joined our mission</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Volunteering with Tekeleza Hub has been one of the most rewarding experiences of my life. I've not only contributed to meaningful projects but also grown both personally and professionally.</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="James Kariuki">
+                        </div>
+                        <div class="author-info">
+                            <h4>James Kariuki</h4>
+                            <p>Software Developer & Volunteer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">As a mentor, I've had the privilege of guiding bright young minds. The satisfaction of seeing my mentees grow and succeed in their tech careers is unparalleled.</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Sarah Mwende">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Mwende</h4>
+                            <p>Data Scientist & Mentor</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class极速"testimonial-text">Our company's partnership with Tekeleza Hub has allowed us to make a real social impact while engaging our employees in meaningful volunteer work. It's a win-win for everyone involved.</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w极速200&q=80" alt="Michael Otieno">
+                        </div>
+                        <div class="author-info">
+                            <h4>Michael Otieno</h4>
+                            <p>Business Partner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <div class="cta-content">
+                <h2>Ready to Make a Difference?</h2>
+                <p>Join our community of changemakers and help us empower communities through technology</p>
+                <a href="contact.html" class="cta-btn">Get Involved Today</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; 2023 Tekeleza Hub. All rights reserved.</p>
+    </div>
+
+    <script>
+        // Menu toggle functionality
         const menuToggle = document.getElementById('menu-toggle');
         const navLinks = document.getElementById('nav-links');
         
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
-        </script>
-
-    <!-- Header -->
-    <header>
-        <h1>Get Involved with Tekeleza Hub</h1>
-        <p>Join us in driving innovation and empowering communities through technology and collaboration.</p>
-    </header>
-
-    <!-- Main Content -->
-    <section class="get-involved">
-        <h2>Ways to Get Involved</h2>
-
-        <!-- Volunteering Section -->
-        <div class="involvement-option">
-            <h3>Volunteer</h3>
-            <p>Become a part of our team by volunteering your time and skills. Whether you're a tech expert or someone passionate about making a difference, we welcome your support.</p>
-            <a href="contact.html" class="btn">Sign Up to Volunteer</a>
-        </div>
-
-        <!-- Mentorship Section -->
-        <div class="involvement-option">
-            <h3>Become a Mentor</h3>
-            <p>Help nurture the next generation of tech leaders. Share your expertise, guide aspiring innovators, and inspire positive change through mentorship.</p>
-            <a href="mentorship.html" class="btn">Learn About Mentorship</a>
-        </div>
-
-        <!-- Partner Section -->
-        <div class="involvement-option">
-            <h3>Partner with Us</h3>
-            <p>Collaborate with Tekeleza Hub to bring impactful programs and projects to life. Let’s work together to create sustainable change.</p>
-            <a href="contact.html" class="btn">Contact Us for Partnerships</a>
-        </div>
-
-        <!-- Donate Section -->
-        <div class="involvement-option">
-            <h3>Donate</h3>
-            <p>Your contributions enable us to continue our mission of empowering individuals and communities through technology.</p>
-            <a href="donate.html" class="btn">Make a Donation</a>
-        </div>
-
-        <!-- Community Membership -->
-        <div class="involvement-option">
-            <h3>Join Our Community</h3>
-            <p>Be part of a vibrant and inclusive tech community. Stay updated on events, workshops, and opportunities to collaborate.</p>
-            <a href="#" class="btn">Join the Community</a>
-        </div>
-    </section>
-
-    
+        
+        // Animate involvement cards on scroll
+        const involvementCards = document.querySelectorAll('.involvement-card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Animate impact numbers if it's the impact section
+                    if (entry.target.classList.contains('impact-item')) {
+                        animateImpactNumbers();
+                    }
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+        
+        involvementCards.forEach(card => {
+            observer.observe(card);
+        });
+        
+        // Add staggered animation delay
+        involvementCards.forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+        });
+        
+        // Animate impact numbers
+        function animateImpactNumbers() {
+            const volunteers = document.getElementById('volunteers-count');
+            const projects = document.getElementById('projects-count');
+            const peopleHelped = document.getElementById('people-helped');
+            const partners = document.getElementById('partners-count');
+            
+            animateValue(volunteers, 0, 120, 2000);
+            animateValue(projects, 0, 25, 2000);
+            animateValue(peopleHelped, 0, 1500, 2000);
+            animateValue(partners, 0, 18, 2000);
+        }
+        
+        function animateValue(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                element.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+    </script>
 </body>
 </html>

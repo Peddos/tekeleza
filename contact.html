@@ -4,106 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/tekeleza-logo.jpg" type="image/x-icon" />
-    <title>Contact Us</title>
+    <title>Contact Us - Tekeleza</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
+        
         body {
-            background: whitesmoke;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
             overflow-x: hidden;
         }
-        .container {
-            max-width: 600px;
-            margin: 120px auto 50px;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        h2 {
-            color: #019D91;
-            font-size: 2rem;
-            margin-bottom: 10px;
-            animation: fadeIn 1s ease-in-out;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            animation: slideIn 1.5s ease-in-out;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid #019D91;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        button {
-            background: #019D91;
-            color: white;
-            border: none;
-            padding: 10px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        button:hover {
-            background: #017a74;
-        }
-        .social-icons {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .social-icons a {
-            font-size: 1.5rem;
-            color: #019D91;
-            transition: 0.3s;
-        }
-        .social-icons a:hover {
-            color: #017a74;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes slideIn {
-            from { transform: translateY(-30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        /* Falling Items (Flowers) */
-        .falling-item {
-            position: absolute;
-            width: 40px;
-            animation: fall linear infinite;
-        }
-        @keyframes fall {
-            from { transform: translateY(-100vh) rotate(0deg); opacity: 0.9; }
-            to { transform: translateY(100vh) rotate(360deg); opacity: 0.9; }
-        }
-
-        /* Make "Contact Us" Larger on Wide Screens */
-        @media (min-width: 1024px) {
-            h2 {
-                font-size: 3rem;
-            }
-            .container {
-                max-width: 800px;
-            }
-        }
-
+        
+        /* Navbar styles (unchanged as requested) */
         .navbar {
-            background-color:  #019D91;
+            background-color: #019D91;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -168,6 +88,352 @@
                 display: block;
             }
         }
+        
+        /* Main content */
+        .main-content {
+            padding-top: 120px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Background elements */
+        .bg-element {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .bg-1 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(45deg, #019D91, #ffdd57);
+            top: 10%;
+            left: 5%;
+            animation: float 15s ease-in-out infinite;
+        }
+        
+        .bg-2 {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, #ffdd57, #019D91);
+            bottom: 15%;
+            right: 10%;
+            animation: float 12s ease-in-out infinite reverse;
+        }
+        
+        .bg-3 {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #019D91, #8b5cf6);
+            top: 40%;
+            right: 20%;
+            animation: float 10s ease-in-out infinite;
+        }
+        
+        /* Contact container */
+        .container {
+            max-width: 800px;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(1, 157, 145, 0.2);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 10;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(1, 157, 145, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 6s infinite;
+            z-index: -1;
+        }
+        
+        h2 {
+            color: #019D91;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #019D91, #ffdd57);
+            border-radius: 2px;
+        }
+        
+        .subtitle {
+            color: #555;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1.2s ease-out;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            animation: fadeInUp 1.4s ease-out;
+        }
+        
+        .form-group {
+            position: relative;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 18px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        input:focus, textarea:focus {
+            border-color: #019D91;
+            box-shadow: 0 5px 15px rgba(1, 157, 145, 0.2);
+            outline: none;
+            transform: translateY(-3px);
+        }
+        
+        label {
+            position: absolute;
+            left: 20px;
+            top: 18px;
+            color: #999;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+        
+        input:focus + label, 
+        textarea:focus + label,
+        input:not(:placeholder-shown) + label,
+        textarea:not(:placeholder-shown) + label {
+            top: -12px;
+            left: 15px;
+            font-size: 0.85rem;
+            background: white;
+            padding: 0 8px;
+            color: #019D91;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #019D91, #017a74);
+            color: white;
+            border: none;
+            padding: 16px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 20px rgba(1, 157, 145, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+        
+        button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(1, 157, 145, 0.4);
+        }
+        
+        button:hover::before {
+            left: 100%;
+        }
+        
+        .social-section {
+            margin-top: 40px;
+            animation: fadeInUp 1.6s ease-out;
+        }
+        
+        .social-title {
+            color: #555;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #019D91, #017a74);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 15px rgba(1, 157, 145, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-icons a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #017a74, #019D91);
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+        
+        .social-icons a:hover {
+            transform: translateY(-8px) rotate(5deg);
+            box-shadow: 0 12px 20px rgba(1, 157, 145, 0.4);
+        }
+        
+        .social-icons a:hover::before {
+            opacity: 1;
+        }
+        
+        /* Success message */
+        .success-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 1000;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        
+        .success-message.active {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        
+        .success-message h2 {
+            color: #019D91;
+            margin-bottom: 20px;
+        }
+        
+        .success-message p {
+            color: #555;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        /* Falling items animation */
+        .falling-item {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            z-index: 999;
+            animation: fall linear forwards;
+            pointer-events: none;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+        
+        @keyframes shine {
+            0% { transform: rotate(45deg) translateX(-100%); }
+            100% { transform: rotate(45deg) translateX(100%); }
+        }
+        
+        @keyframes fall {
+            from { 
+                transform: translateY(-100px) rotate(0deg); 
+                opacity: 1;
+            }
+            to { 
+                transform: translateY(100vh) rotate(360deg); 
+                opacity: 0;
+            }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+                width: 95%;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .social-icons a {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .bg-element {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -185,37 +451,71 @@
         <div class="menu-toggle" id="menu-toggle">&#9776;</div>
     </nav>
     
+    <div class="main-content">
+        <!-- Background elements -->
+        <div class="bg-element bg-1"></div>
+        <div class="bg-element bg-2"></div>
+        <div class="bg-element bg-3"></div>
+        
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="subtitle">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+            
+            <form id="contactForm" action="https://formspree.io/f/xrbkwqkq" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" id="name" placeholder=" " required>
+                    <label for="name">Your Name</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" name="email" id="email" placeholder=" " required>
+                    <label for="email">Your Email</label>
+                </div>
+                
+                <div class="form-group">
+                    <textarea name="message" id="message" rows="4" placeholder=" " required></textarea>
+                    <label for="message">Your Message</label>
+                </div>
+                
+                <button type="submit">Send Message</button>
+            </form>
+            
+            <div class="social-section">
+                <p class="social-title">Connect with us on social media</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/company/106261124" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://discord.gg/QNvAa9Yv" target="_blank" aria-label="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a href="https://t.me/tekelezahub" target="_blank" aria-label="Telegram">
+                        <i class="fab fa-telegram-plane"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage">
+        <h2>🎉 Message Sent Successfully! 🎉</h2>
+        <p>Thank you for contacting us. We'll get back to you soon.</p>
+        <p>Redirecting to homepage...</p>
+    </div>
+
     <script>
+        // Menu toggle functionality
         const menuToggle = document.getElementById('menu-toggle');
         const navLinks = document.getElementById('nav-links');
         
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
-    </script>
-
-    <div class="container">
-        <h2>Contact Us</h2>
-        <form id="contactForm" action="https://formspree.io/f/xrbkwqkq" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-            <button type="submit">Submit</button>
-        </form>
-        <div class="social-icons">
-            <!--<a href="#"><i class="fab fa-twitter"></i></a>-->
-            <a href="https://www.linkedin.com/company/106261124"><i class="fab fa-linkedin"></i></a>
-            <!--<a href="#"><i class="fab fa-facebook"></i></a>-->
-            <a href="https://discord.gg/QNvAa9Yv"><i class="fab fa-discord"></i></a>
-           <!-- <a href="#"><i class="fab fa-instagram"></i></a>-->
-            <a href="https://t.me/tekelezahub"><i class="fab fa-telegram"></i></a>
-
-
-        </div>
-    </div>
-    <script>
+        
+        // Form submission with enhanced animations
         document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent default form submission behavior
+            event.preventDefault();
     
             const formData = new FormData(this);
     
@@ -225,44 +525,40 @@
                 headers: { 'Accept': 'application/json' }
             }).then(response => {
                 if (response.ok) {
-                    // Show falling flowers and gifts animation
-                    for (let i = 0; i < 15; i++) {
-                        let gift = document.createElement("img");
-                        let images = [
-                            "https://cdn-icons-png.flaticon.com/512/4729/4729050.png",
-                            "https://cdn-icons-png.flaticon.com/512/4729/4729077.png",
-                            "https://cdn-icons-png.flaticon.com/512/4729/4729039.png",
-                            "https://cdn-icons-png.flaticon.com/512/4729/4729040.png"
-                        ];
-                        gift.src = images[Math.floor(Math.random() * images.length)];
-                        gift.classList.add("falling-item");
-                        gift.style.left = Math.random() * window.innerWidth + "px";
-                        gift.style.animationDuration = Math.random() * 3 + 2 + "s";
-                        document.body.appendChild(gift);
-                        setTimeout(() => gift.remove(), 5000);
+                    // Create falling celebration items
+                    const images = [
+                        "https://cdn-icons-png.flaticon.com/512/4729/4729050.png",
+                        "https://cdn-icons-png.flaticon.com/512/4729/4729077.png",
+                        "https://cdn-icons-png.flaticon.com/512/4729/4729039.png",
+                        "https://cdn-icons-png.flaticon.com/512/4729/4729040.png"
+                    ];
+                    
+                    for (let i = 0; i < 20; i++) {
+                        setTimeout(() => {
+                            let gift = document.createElement("img");
+                            gift.src = images[Math.floor(Math.random() * images.length)];
+                            gift.classList.add("falling-item");
+                            gift.style.left = Math.random() * window.innerWidth + "px";
+                            gift.style.animationDuration = (Math.random() * 3 + 2) + "s";
+                            document.body.appendChild(gift);
+                            
+                            // Remove element after animation completes
+                            setTimeout(() => {
+                                if (gift.parentNode) {
+                                    gift.parentNode.removeChild(gift);
+                                }
+                            }, 5000);
+                        }, i * 150);
                     }
-    
-                    // Display congratulation message
-                    let messageBox = document.createElement("div");
-                    messageBox.innerHTML = "<h2>🎉 Congratulations! Your message has been sent successfully! 🎉</h2>";
-                    messageBox.style.position = "fixed";
-                    messageBox.style.top = "50%";
-                    messageBox.style.left = "50%";
-                    messageBox.style.transform = "translate(-50%, -50%)";
-                    messageBox.style.background = "rgba(0, 0, 0, 0.8)";
-                    messageBox.style.color = "white";
-                    messageBox.style.padding = "20px";
-                    messageBox.style.borderRadius = "10px";
-                    messageBox.style.textAlign = "center";
-                    messageBox.style.fontSize = "1.5rem";
-                    messageBox.style.zIndex = "1000";
-                    document.body.appendChild(messageBox);
-    
+                    
+                    // Show success message
+                    const successMessage = document.getElementById('successMessage');
+                    successMessage.classList.add('active');
+                    
                     // Redirect to the homepage after 3 seconds
                     setTimeout(() => {
-                        messageBox.remove();
-                        window.location.href = "index.html"; // Change this to your homepage URL
-                    }, 3000); // 3-second delay before redirect
+                        window.location.href = "index.html";
+                    }, 3000);
                 } else {
                     alert("Oops! Something went wrong. Please try again.");
                 }
@@ -271,7 +567,18 @@
                 alert("Submission failed. Check your connection and try again.");
             });
         });
+        
+        // Add subtle animation to form elements on focus
+        const formInputs = document.querySelectorAll('input, textarea');
+        formInputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.style.transform = 'translateY(-5px)';
+            });
+            
+            input.addEventListener('blur', () => {
+                input.parentElement.style.transform = 'translateY(0)';
+            });
+        });
     </script>
-    
 </body>
 </html>
