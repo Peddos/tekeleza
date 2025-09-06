@@ -106,7 +106,7 @@
 .leader-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,.12); }
 /* Animated gradient border around cards */
 .leader-card { position: relative; border-radius: 16px; }
-.leader-card::before { content: ""; position: absolute; inset: 0; border-radius: 16px; padding: 2px; background: linear-gradient(45deg,#06b6d4,#22c55e,#f59e0b,#ef4444,#8b5cf6); background-size:400% 400%; animation: gradientShift 8s ease infinite; -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+.leader-card::before { content: ""; position: absolute; inset: 0; border-radius: 16px; padding: 2px; background: linear-gradient(45deg,#06b6d4,#22c55e,#f59e0b,#ef4444,#8b5cf6); background-size:400% 400%; animation: gradientShift 8s ease infinite; -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
 
 /* Enhanced content section styling */
 .content-section { 
