@@ -54,6 +54,7 @@
             <img src="images/tekeleza-logo-removebg-preview.png" alt="Tekeleza Hub Logo">
         </div>
         <ul class="nav-links" id="nav-links">
+            <button class="nav-close" id="nav-close" aria-label="Close menu">&times;</button>
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html#about-us">About Us</a></li>
             <li><a href="story.html">Our Story</a></li>
@@ -148,10 +149,13 @@
         });
 
         const menuToggle = document.getElementById('menu-toggle');
-        const navLinks = document.getElementById('nav-links');
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+        const navLinks   = document.getElementById('nav-links');
+        const navClose   = document.getElementById('nav-close');
+        function openMenu()  { navLinks.classList.add('active');    document.body.style.overflow = 'hidden'; }
+        function closeMenu() { navLinks.classList.remove('active'); document.body.style.overflow = ''; }
+        menuToggle.addEventListener('click', openMenu);
+        navClose.addEventListener('click', closeMenu);
+        navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', closeMenu));
     </script>
 </body>
 </html>

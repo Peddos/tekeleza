@@ -55,13 +55,14 @@
             <img src="images/tekeleza-logo-removebg-preview.png" alt="Tekeleza Hub Logo">
         </div>
         <ul class="nav-links" id="nav-links">
+            <button class="nav-close" id="nav-close" aria-label="Close menu">&times;</button>
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="#about-us">About Us</a></li>
             <li><a href="story.html">Our Story</a></li>
             <li><a href="donate.html">Donate</a></li>
             <li><a href="contact.html">Contact Us</a></li>
         </ul>
-        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        <div class="menu-toggle" id="menu-toggle" aria-label="Open menu">&#9776;</div>
     </nav>
 
     <header class="hero">
@@ -84,17 +85,17 @@
         </div>
         <div class="grid-3">
             <div class="glass-card feature-card">
-                <div class="icon-wrap">ðŸš€</div>
+                <div class="icon-wrap"><i class="fas fa-rocket"></i></div>
                 <h3>Skill Sharing</h3>
                 <p>Learn from industry experts and peer-to-peer knowledge exchange sessions.</p>
             </div>
             <div class="glass-card feature-card">
-                <div class="icon-wrap">ðŸŒ</div>
+                <div class="icon-wrap"><i class="fas fa-globe-africa"></i></div>
                 <h3>Network Growth</h3>
                 <p>Connect with a global network of innovators, mentors, and potential partners.</p>
             </div>
             <div class="glass-card feature-card">
-                <div class="icon-wrap">ðŸ’¡</div>
+                <div class="icon-wrap"><i class="fas fa-lightbulb"></i></div>
                 <h3>Impact Creation</h3>
                 <p>Turn your vision into real-world solutions that solve community challenges.</p>
             </div>
@@ -102,17 +103,17 @@
 
         <div class="grid-3" style="margin-top: 3rem;">
             <div class="glass-card feature-card">
-                <div class="icon-wrap">ðŸ¤</div>
+                <div class="icon-wrap"><i class="fas fa-hands-helping"></i></div>
                 <h3>Community Support</h3>
                 <p>Get the mentorship and guidance you need to navigate your innovation journey.</p>
             </div>
             <div class="glass-card feature-card">
-                <div class="icon-wrap">ðŸ‘ï¸</div>
+                <div class="icon-wrap"><i class="fas fa-eye"></i></div>
                 <h3>Vision</h3>
                 <p>To become a globally recognized hub for technological innovation and excellence, nurturing a new generation of tech leaders.</p>
             </div>
             <div class="glass-card feature-card">
-                <div class="icon-wrap">ðŸŽ¯</div>
+                <div class="icon-wrap"><i class="fas fa-bullseye"></i></div>
                 <h3>Mission</h3>
                 <p>To empower individuals and organizations through cutting-edge advancements. We aim to build a vibrant and inclusive tech community.</p>
             </div>
@@ -175,21 +176,21 @@
         </div>
     </section>
 
-    <section id="members" class="glass" style="margin: 4rem 5%; border-radius: var(--radius-lg); padding: 4rem;">
+    <section id="members" class="glass" style="margin: 4rem 5%; border-radius: var(--radius-lg); padding: 3rem 2rem;">
         <div class="section-title">
             <h2>Tekeleza Hub Members</h2>
             <p>Meet the innovators behind our community.</p>
         </div>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;">
-            <img src="images/member777.jpeg" alt="Member" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
-            <img src="images/member888.jpeg" alt="Member" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
-            <img src="images/m12.jpeg" alt="Member" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
-            <img src="images/m11.jpeg" alt="Member" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
-            <img src="images/m9.jpeg" alt="Member" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
-            <img src="images/member666.jpeg" alt="Member" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
-            <img src="images/m88.jpg" alt="Member" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
-            <img src="images/m9.jpg" alt="Member" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
-            <img src="images/m6.jpg" alt="Member" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
+        <div class="members-grid">
+            <img src="images/member777.jpeg" alt="Tekeleza Hub Member">
+            <img src="images/member888.jpeg" alt="Tekeleza Hub Member">
+            <img src="images/m12.jpeg" alt="Tekeleza Hub Member">
+            <img src="images/m11.jpeg" alt="Tekeleza Hub Member">
+            <img src="images/m9.jpeg" alt="Tekeleza Hub Member">
+            <img src="images/member666.jpeg" alt="Tekeleza Hub Member">
+            <img src="images/m88.jpg" alt="Tekeleza Hub Member">
+            <img src="images/m9.jpg" alt="Tekeleza Hub Member">
+            <img src="images/m6.jpg" alt="Tekeleza Hub Member">
         </div>
     </section>
 
@@ -245,16 +246,34 @@
     </footer>
 
     <script>
+        // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) navbar.classList.add('scrolled');
             else navbar.classList.remove('scrolled');
         });
 
+        // Mobile menu
         const menuToggle = document.getElementById('menu-toggle');
-        const navLinks = document.getElementById('nav-links');
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+        const navLinks   = document.getElementById('nav-links');
+        const navClose   = document.getElementById('nav-close');
+
+        function openMenu() {
+            navLinks.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            navLinks.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        menuToggle.addEventListener('click', openMenu);
+        navClose.addEventListener('click', closeMenu);
+
+        // Close menu when a nav link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
         });
     </script>
 </body>
