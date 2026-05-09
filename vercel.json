@@ -1,4 +1,5 @@
 {
+  "name": "tekeleza-hub",
   "cleanUrls": true,
   "trailingSlash": false,
   "headers": [
