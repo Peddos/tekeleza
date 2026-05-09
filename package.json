@@ -1,0 +1,13 @@
+{
+  "name": "tekeleza-hub",
+  "version": "1.0.0",
+  "description": "Tekeleza Hub - Innovate, Empower & Transform",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve .",
+    "dev": "serve ."
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}

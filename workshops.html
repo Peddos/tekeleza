@@ -3,617 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workshops & Training - Tekeleza Hub</title>
     <link rel="icon" href="images/tekeleza-logo.jpg" type="image/x-icon" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Workshops | Tekeleza Hub - Skill-Sharing & Training</title>
+    <meta name="description" content="Participate in hands-on workshops at Tekeleza Hub. Gain practical skills in technology, entrepreneurship, and innovation from industry leaders in Kenya." />
+    <meta property="og:title" content="Workshops | Tekeleza Hub" />
+    <meta property="og:description" content="Practical skills for the modern innovator." />
+    <meta property="og:image" content="images/tekeleza-logo.jpg" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/modern.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-        
-        /* Navbar styles (unchanged as requested) */
-        .navbar {
-            background-color: #019D91;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 30px;
-            color: white;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 80px;
-            z-index: 1000;
-        }
-
-        .logo img {
-            height: 80px;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-        }
-
-        .nav-links li {
-            margin: 0 15px;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #ffdd57;
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                background-color: #019D91;
-                position: absolute;
-                top: 60px;
-                right: 20px;
-                width: 150px;
-                text-align: left;
-                padding: 10px;
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .menu-toggle {
-                display: block;
-            }
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(120deg, rgba(1,157,145,0.9) 0%, rgba(0,131,121,0.85) 100%), 
-                        url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
-            background-size: cover;
-            background-position: center;
-            padding: 160px 20px 100px;
-            text-align: center;
-            color: white;
-            position: relative;
+        .workshop-card {
             overflow: hidden;
-            min-height: 60vh;
+            padding: 0;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
         }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 极速 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-极速-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
-            opacity: 0.6;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            animation: fadeInUp 1s ease-out;
-        }
-        
-        .hero p {
-            font-size: 1.5rem;
-            margin: 0 auto 2rem;
-            animation: fadeInUp 1.2s ease-out;
-        }
-        
-        /* Workshops Section */
-        .workshops-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: #019D91;
-            margin-bottom: 15px;
-            display: inline-block;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, #019d91, #ffdd57);
-            border-radius: 2px;
-        }
-        
-        .section-title p {
-            font-size: 1.2rem;
-            color: #555;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .workshops-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-        
-        .workshop-card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s ease;
-            position: relative;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        
-        .workshop-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .workshop-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(1, 157, 145, 0.2);
-        }
-        
         .workshop-image {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .workshop-image img {
             width: 100%;
-            height: 100%;
+            height: 200px;
             object-fit: cover;
-            transition: transform 0.5s ease;
         }
-        
-        .workshop-card:hover .workshop-image img {
-            transform: scale(1.1);
-        }
-        
         .workshop-content {
-            padding: 25px;
+            padding: 1.5rem;
+            flex-grow: 1;
         }
-        
-        .workshop-content h3 {
-            font-size: 1.5rem;
-            color: #019D91;
-            margin-bottom: 15px;
-        }
-        
-        .workshop-content p {
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        
-        .workshop-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px solid #eee;
-        }
-        
         .workshop-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
-            color: #019D91;
-            font-weight: 500;
+            gap: 0.5rem;
         }
-        
         .workshop-date i {
-            margin-right: 8px;
-        }
-        
-        .workshop-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #019D91, #017a74);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(1, 157, 145, 0.3);
-        }
-        
-        .workshop-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(1, 157, 145, 0.4);
-        }
-        
-        /* Benefits Section */
-        .benefits-section {
-            background: linear-gradient(135deg, #017d73 0%, #019d91 100%);
-            padding: 80px 20px;
-            color: white;
-            text-align: center;
-        }
-        
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 50px auto 0;
-        }
-        
-        .benefit-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.4s ease;
-        }
-        
-        .benefit-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-        
-        .benefit-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 2rem;
-        }
-        
-        .benefit-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-        
-        .benefit-card p {
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            padding: 80px 20px;
-            text-align: center;
-            background: white;
-        }
-        
-        .cta-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .cta-content h2 {
-            font-size: 2.5rem;
-            color: #019D91;
-            margin-bottom: 20px;
-        }
-        
-        .cta-content p {
-            font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 30px;
-        }
-        
-        .cta-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #019D91, #017a74);
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(1, 157, 145, 0.3);
-        }
-        
-        .cta-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(1, 157, 145, 0.4);
-        }
-        
-        /* Footer */
-        .footer {
-            background: #03332f;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        
-        .footer p {
-            opacity: 0.8;
-        }
-        
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes fadeInUp {
-            from { 
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .workshops-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
+            color: var(--primary);
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="glass">
         <div class="logo">
-            <img src="images/tekeleza-logo-removebg-preview.png" alt="Logo">
+            <img src="images/tekeleza-logo-removebg-preview.png" alt="Tekeleza Hub">
+            <span>Tekeleza Hub</span>
         </div>
-        <ul class="nav-links" id="nav-links">
+        <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#about-us">About Us</a></li>
             <li><a href="story.html">Our Story</a></li>
+            <li><a href="projects.html">Projects</a></li>
             <li><a href="donate.html">Donate</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
-        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
     </nav>
-    
-    <div class="hero">
+
+    <header class="hero">
         <div class="hero-content">
             <h1>Workshops & Training</h1>
             <p>Hands-on technical training sessions to build your expertise in cutting-edge technologies.</p>
         </div>
-    </div>
+    </header>
 
-    <div class="workshops-container">
-        <div class="section-title">
-            <h2>Upcoming Workshops</h2>
-            <p>Join our interactive workshops designed to equip you with practical skills and knowledge</p>
-        </div>
-        
-        <div class="workshops-grid">
-            <div class="workshop-card">
-                <div class="workshop-image">
-                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Web Development">
+    <main class="container">
+        <section id="workshops">
+            <div class="section-title">
+                <h2>Upcoming Sessions</h2>
+                <p>Join our interactive workshops designed to equip you with practical skills and knowledge.</p>
+            </div>
+            <div class="grid-3">
+                <div class="glass-card workshop-card">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Web Dev" class="workshop-image">
+                    <div class="workshop-content">
+                        <div class="workshop-date"><i class="far fa-calendar-alt"></i> Oct 15, 2023</div>
+                        <h3>Intro to Web Development</h3>
+                        <p>Learn HTML, CSS, and JavaScript to build responsive and interactive websites from scratch.</p>
+                        <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem; display: block; text-align: center;">Register</a>
+                    </div>
                 </div>
-                <div class="workshop-content">
-                    <h3>Introduction to Web Development</h3>
-                    <p>Learn the fundamentals of HTML, CSS, and JavaScript to build responsive and interactive websites from scratch.</p>
-                    <div class="workshop-meta">
-                        <div class="workshop-date">
-                            <i class="far fa-calendar-alt"></i>
-                            <span>Oct 15, 2023</span>
-                        </div>
-                        <a href="#" class="workshop-btn">Register Now</a>
+                <div class="glass-card workshop-card">
+                    <img src="https://images.unsplash.com/photo-1526379879527-8559ecfcaec0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Python" class="workshop-image">
+                    <div class="workshop-content">
+                        <div class="workshop-date"><i class="far fa-calendar-alt"></i> Oct 22, 2023</div>
+                        <h3>Mastering Python</h3>
+                        <p>From basics to advanced concepts, become proficient in one of the world's most popular languages.</p>
+                        <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem; display: block; text-align: center;">Register</a>
+                    </div>
+                </div>
+                <div class="glass-card workshop-card">
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Cybersecurity" class="workshop-image">
+                    <div class="workshop-content">
+                        <div class="workshop-date"><i class="far fa-calendar-alt"></i> Nov 5, 2023</div>
+                        <h3>Cybersecurity Fundamentals</h3>
+                        <p>Understand threats and best practices to protect digital assets in the modern era.</p>
+                        <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem; display: block; text-align: center;">Register</a>
                     </div>
                 </div>
             </div>
-            
-            <div class="workshop-card">
-                <div class="workshop-image">
-                    <img src="https://images.unsplash.com/photo-1526379879527-8559ecfcaec0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Python Programming">
-                </div>
-                <div class="workshop-content">
-                    <h3>Mastering Python Programming</h3>
-                    <p>From basics to advanced concepts, become proficient in one of the world's most popular programming languages.</p>
-                    <div class="workshop-meta">
-                        <div class="workshop-date">
-                            <i class="far fa-calendar-alt"></i>
-                            <span>Oct 22, 2023</span>
-                        </div>
-                        <a href="#" class="workshop-btn">Register Now</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="workshop-card">
-                <div class="workshop-image">
-                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Cybersecurity">
-                </div>
-                <div class="workshop-content">
-                    <h3>Cybersecurity for Beginners</h3>
-                    <p>Understand the fundamentals of cybersecurity, threats, and best practices to protect digital assets.</p>
-                    <div class="workshop-meta">
-                        <div class="workshop-date">
-                            <i class="far fa-calendar-alt"></i>
-                            <span>Nov 5, 2023</span>
-                        </div>
-                        <a href="#" class="workshop-btn">Register Now</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="workshop-card">
-                <div class="workshop-image">
-                    <img src="https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="AI & ML">
-                </div>
-                <div class="workshop-content">
-                    <h3>AI & Machine Learning Fundamentals</h3>
-                    <p>Explore the world of artificial intelligence and machine learning with practical examples and projects.</p>
-                    <div class="workshop-meta">
-                        <div class="workshop-date">
-                            <i class="far fa-calendar-alt"></i>
-                            <span>Nov 12, 2023</span>
-                        </div>
-                        <a href="#" class="workshop-btn">Register Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="benefits-section">
-        <div class="section-title">
-            <h2 style="color: white;">Why Join Our Workshops?</h2>
-            <p style="color: rgba(255,255,255,0.9);">We provide exceptional learning experiences that deliver real value</p>
-        </div>
-        
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                </div>
-                <h3>Expert Instructors</h3>
-                <p>Learn from industry professionals with years of practical experience</p>
-            </div>
-            
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <i class="fas fa-laptop-code"></i>
-                </div>
-                <h3>Hands-on Projects</h3>
-                <p>Apply your knowledge through real-world projects and exercises</p>
-            </div>
-            
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <i class="fas fa-users"></i>
-                </div>
-                <h3>Networking Opportunities</h3>
-                <p>Connect with like-minded individuals and industry experts</p>
-            </div>
-            
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <i class="fas fa-certificate"></i>
-                </div>
-                <h3>Certification</h3>
-                <p>Receive a certificate of completion to showcase your new skills</p>
-            </div>
-        </div>
-    </div>
-    
-    <div class="cta-section">
-        <div class="cta-content">
-            <h2>Ready to Enhance Your Skills?</h2>
-            <p>Join our community of learners and take your technical skills to the next level</p>
-            <a href="contact.html" class="cta-btn">Get in Touch</a>
-        </div>
-    </div>
-    
-    <div class="footer">
-        <p>&copy; 2023 Tekeleza Hub. All rights reserved.</p>
-    </div>
+        </section>
 
-    <script>
-        // Menu toggle functionality
-        const menuToggle = document.getElementById('menu-toggle');
-        const navLinks = document.getElementById('nav-links');
-        
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        
-        // Animate workshop cards on scroll
-        const workshopCards = document.querySelectorAll('.workshop-card');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.2
-        });
-        
-        workshopCards.forEach(card => {
-            observer.observe(card);
-        });
-        
-        // Add staggered animation delay
-        workshopCards.forEach((card, index) => {
-            card.style.transitionDelay = `${index * 0.1}s`;
-        });
-    </script>
+        <section style="margin: 4rem 0;">
+            <div class="section-title">
+                <h2>Why Learn With Us?</h2>
+            </div>
+            <div class="grid-4">
+                <div class="glass-card feature-card">
+                    <i class="fas fa-chalkboard-teacher fa-2x text-primary" style="margin-bottom: 1rem;"></i>
+                    <h3>Expert Instructors</h3>
+                    <p>Learn from professionals with years of experience.</p>
+                </div>
+                <div class="glass-card feature-card">
+                    <i class="fas fa-laptop-code fa-2x text-primary" style="margin-bottom: 1rem;"></i>
+                    <h3>Hands-on</h3>
+                    <p>Apply knowledge through real-world projects.</p>
+                </div>
+                <div class="glass-card feature-card">
+                    <i class="fas fa-users fa-2x text-primary" style="margin-bottom: 1rem;"></i>
+                    <h3>Networking</h3>
+                    <p>Connect with peers and industry experts.</p>
+                </div>
+                <div class="glass-card feature-card">
+                    <i class="fas fa-certificate fa-2x text-primary" style="margin-bottom: 1rem;"></i>
+                    <h3>Certification</h3>
+                    <p>Receive a certificate to showcase your skills.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="glass" style="margin: 4rem 0; padding: 4rem; text-align: center; border-radius: var(--radius-lg);">
+            <h2>Ready to Level Up?</h2>
+            <p style="margin: 1.5rem 0;">Join our community of learners and take your skills to the next level.</p>
+            <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-socials" style="margin-bottom: 1.5rem; display: flex; justify-content: center; gap: 1.5rem; font-size: 1.5rem;">
+            <a href="#" style="color: white;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: white;"><i class="fab fa-twitter"></i></a>
+            <a href="#" style="color: white;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: white;"><i class="fab fa-linkedin"></i></a>
+            <a href="#" style="color: white;"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2026 Tekeleza Hub. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">Innovate. Empower. Transform.</p>
+    </footer>
 </body>
 </html>

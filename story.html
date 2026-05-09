@@ -1,680 +1,193 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/tekeleza-logo.jpg" type="image/x-icon" />
-    <title>Tekeleza: Empowering Innovators</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <title>Our Story | Tekeleza Hub - Empowering Innovators in Kenya</title>
+    <meta name="description" content="Discover the journey of Tekeleza Hub. A community-based organization in Kenya dedicated to fostering innovation through mentorship, skills training, and networking." />
+    <meta property="og:title" content="Our Story | Tekeleza Hub" />
+    <meta property="og:description" content="Empowering the next generation of problem-solvers and entrepreneurs in Kenya." />
+    <meta property="og:image" content="images/tekeleza-logo.jpg" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/modern.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css" />
     <style>
-
-
-.navbar {
-            background-color:  #019D91;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 30px;
-            color: white;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 80px;
-            z-index: 1000;
+        .swiper-container {
+            padding: 2rem 0 4rem;
         }
-
-.logo img {
-    height: 80px;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.nav-links li {
-    margin: 0 15px;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: #ffdd57;
-}
-
-.menu-toggle {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: #019D91;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        width: 150px;
-        text-align: left;
-        padding: 10px;
-    }
-    
-    .nav-links.active {
-        display: flex;
-    }
-    
-    .menu-toggle {
-        display: block;
-    }
-}
-/* Animated gradient border */
-.rainbow-border { position: relative; border-radius: 16px; padding: 2px; background: linear-gradient(45deg,#06b6d4,#22c55e,#f59e0b,#ef4444,#8b5cf6); background-size:400% 400%; animation: gradientShift 8s ease infinite; }
-.rainbow-inner { border-radius: 14px; background:#ffffff; }
-@keyframes gradientShift { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
-
-/* Swiper adjustments: center, reduce bottom space */
-.mySwiper { padding-bottom: 0 !important; margin-bottom: 0 !important; overflow: visible; height: auto !important; }
-.mySwiper .swiper-wrapper { align-items: stretch; gap: 0 !important; padding-bottom: 0 !important; margin-bottom: 0 !important; height: auto !important; }
-.mySwiper .swiper-slide { display: flex; justify-content: center; height: auto !important; margin-right: 0 !important; }
-@media (max-width: 768px) { .mySwiper .swiper-slide { margin-right: 0 !important; } }
-
-/* Tighten spacing below the section and before Introduction */
-#leaders { padding-bottom: 0 !important; margin-bottom: 0 !important; }
-#content { margin-top: 16px !important; padding-top: 16px !important; }
-/* Remove pagination dots */
-.mySwiper .swiper-pagination { display: none !important; margin: 0 !important; }
-/* Tighten the space before the next section on mobile */
-#content { padding-top: 4px !important; }
-/* Animated accent ring for circular avatars */
-.ring-animated { 
-  background: conic-gradient(from 0deg, #06b6d4, #22c55e, #f59e0b, #ef4444, #8b5cf6, #06b6d4);
-  animation: spinRing 6s linear infinite;
-}
-@keyframes spinRing { to { transform: rotate(360deg); } }
-
-/* Card hover animation */
-.leader-card { transition: transform .25s ease, box-shadow .25s ease; }
-.leader-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,.12); }
-/* Animated gradient border around cards */
-.leader-card { position: relative; border-radius: 16px; }
-.leader-card::before { content: ""; position: absolute; inset: 0; border-radius: 16px; padding: 2px; background: linear-gradient(45deg,#06b6d4,#22c55e,#f59e0b,#ef4444,#8b5cf6); background-size:400% 400%; animation: gradientShift 8s ease infinite; -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
-
-/* Enhanced content section styling */
-.content-section { 
-  position: relative; 
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-.content-section:hover { 
-  transform: translateY(-2px); 
-  box-shadow: 0 8px 30px rgba(0,0,0,0.12); 
-}
-.content-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #06b6d4, #22c55e, #f59e0b, #ef4444, #8b5cf6);
-  background-size: 300% 100%;
-  animation: gradientShift 6s ease infinite;
-}
-.content-section h2 {
-  background: linear-gradient(135deg, #1e40af, #3b82f6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  position: relative;
-  padding-bottom: 8px;
-}
-.content-section h2::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, #06b6d4, #22c55e);
-  border-radius: 2px;
-}
-.content-section p {
-  color: #374151;
-  line-height: 1.7;
-  position: relative;
-}
-
-/* Tighten section spacing */
-#leaders { padding-bottom: 0 !important; margin-bottom: 0 !important; }
-.mySwiper { padding-bottom: 0 !important; margin-bottom: 0 !important; }
-.mySwiper .swiper-wrapper { gap: 0 !important; }
-/* Force mobile responsiveness */
-@media (max-width: 480px) {
-  #leaders { padding-top: 6px !important; padding-left: 8px !important; padding-right: 8px !important; }
-  .leader-card { width: 14rem !important; height: 18rem !important; }
-  .mySwiper { margin: 0 !important; padding: 0 !important; }
-}
-@media (max-width: 360px) {
-  .leader-card { width: 12rem !important; height: 16rem !important; }
-}
-
-/* Mobile width tweaks for cards */
-@media (max-width: 640px) {
-  .leader-card { width: 16rem !important; height: 18rem !important; }
-}
+        .leader-card {
+            text-align: center;
+            padding: 2rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .leader-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+            margin-bottom: 1.5rem;
+            object-fit: cover;
+        }
+        .story-section {
+            margin-bottom: 4rem;
+        }
+        .audio-player-card {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        audio {
+            width: 100%;
+            border-radius: 50px;
+        }
     </style>
 </head>
-<body class="bg-gray-100 font-sans text-gray-900">
-
-    <nav class="navbar">
+<body>
+    <nav class="glass">
         <div class="logo">
-            <img src="images/tekeleza-logo-removebg-preview.png" alt="Logo">
+            <img src="images/tekeleza-logo-removebg-preview.png" alt="Tekeleza Hub">
+            <span>Tekeleza Hub</span>
         </div>
-        <ul class="nav-links" id="nav-links">
+        <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#about-us">About Us</a></li>
-            <li><a href="story.html">Our Story</a></li>
+            <li><a href="story.html" class="active">Our Story</a></li>
+            <li><a href="projects.html">Projects</a></li>
             <li><a href="donate.html">Donate</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="#"></a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
-        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-        </nav>
-        
-        <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const navLinks = document.getElementById('nav-links');
-        
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        </script>
+    </nav>
 
-        <!-- Hero Section with audio on right -->
-        <header class="mt-24 relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-br from-teal-600 via-emerald-500 to-cyan-600 opacity-90"></div>
-            <div class="relative z-10 container mx-auto px-6 py-16 text-white">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div>
-                        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight" data-aos="fade-up">Our Story</h1>
-                        <p class="mt-4 max-w-2xl text-lg md:text-xl" data-aos="fade-up" data-aos-delay="100">From a spark of an idea to a thriving movement: how Tekeleza empowers innovators through mentorship, skill-sharing, and community.</p>
-                        <div class="mt-6 flex gap-4" data-aos="fade-up" data-aos-delay="200">
-                            <a href="#leaders" class="bg-white text-teal-700 font-semibold px-5 py-3 rounded-lg shadow hover:shadow-lg transition">Explore Moments</a>
-                            <a href="#game" class="bg-black/30 backdrop-blur px-5 py-3 rounded-lg border border-white/40 hover:bg-black/40 transition">Play Mini‑Game</a>
-                        </div>
-                    </div>
-                    <div class="rainbow-border" data-aos="fade-left">
-                        <div class="rainbow-inner p-6 rounded-xl text-gray-800">
-                            <h3 class="text-lg font-semibold mb-3 animate-bounce">🎧 Listen to Tekeleza Story</h3>
-                            <audio controls class="w-full animate-pulse hover:animate-none">
-                    <source src="media/audio.wav" type="audio/mp3">
-                    Your browser does not support the audio element.
-                </audio>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Our Story</h1>
+            <p>From a spark of an idea to a thriving movement: how Tekeleza empowers innovators through mentorship, skill-sharing, and community.</p>
+            <div class="hero-btns">
+                <a href="#leaders" class="btn btn-primary">Meet the Leaders</a>
+                <a href="#content" class="btn btn-secondary">Read More</a>
             </div>
         </div>
-                </div>
-            </div>
-        </header>
-
-        
-    
-        
-    <!-- Leaders Section (Carousel) -->
-    <section id="leaders" class="w-full px-2 sm:px-4 md:px-6 pt-4 pb-0" data-aos="fade-up">
-        <div class="flex items-end justify-center mb-2 text-center">
-            <div>
-                <h2 class="text-2xl md:text-3xl font-bold text-teal-700">Leaders</h2>
-            </div>
+        <div class="glass-card audio-player-card">
+            <h3>🎧 Listen to Our Story</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Click play to listen (36MB)</p>
+            <audio controls preload="none">
+                <source src="media/audio.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
         </div>
+    </header>
 
-        <div class="swiper mySwiper w-full overflow-hidden">
-            <div class="swiper-wrapper">
-                <!-- Leader 1 -->
-                <div class="swiper-slide">
-                    <div class="leader-card group w-64 sm:w-72 h-80 bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden relative">
-                        <div class="flex justify-center pt-5">
-                            <div class="ring-animated p-[2px] rounded-full">
-                                <div class="bg-white rounded-full p-[3px]">
-                                    <img src="images/m6.jpg" alt="Leader 1" class="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold text-gray-900">John Maina</h3>
-                            <p class="text-teal-700 text-sm">Executive Director</p>
-                            <p class="text-gray-600 text-sm mt-2 italic">“Success is shared, not hoarded.”</p>
-                            <div class="flex items-center gap-3 mt-3">
-                                <a href="https://wa.me/254712345678" target="_blank" class="text-teal-600 hover:text-teal-800 transition-colors" aria-label="WhatsApp">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M20.52 3.48A11.77 11.77 0 0 0 12 .25 11.76 11.76 0 0 0 .25 12 11.62 11.62 0 0 0 2.7 19.3L1 23l3.85-1.65A11.76 11.76 0 0 0 12 23.75 11.76 11.76 0 0 0 23.75 12 11.76 11.76 0 0 0 20.52 3.48ZM12 21.5a9.5 9.5 0 0 1-4.85-1.31l-.35-.2-2.28 1 1-2.22-.23-.36A9.5 9.5 0 1 1 21.5 12 9.51 9.51 0 0 1 12 21.5Zm5.29-7.2c-.29-.14-1.72-.85-1.98-.95s-.46-.14-.65.14-.75.95-.92 1.15-.34.22-.63.07a7.75 7.75 0 0 1-2.29-1.41 8.57 8.57 0 0 1-1.6-2c-.17-.29 0-.45.13-.59s.29-.34.43-.52.19-.29.29-.48a.52.52 0 0 0 0-.51c-.08-.14-.65-1.56-.89-2.14s-.48-.5-.65-.5h-.56a1.08 1.08 0 0 0-.78.37 3.28 3.28 0 0 0-1 2.43 5.68 5.68 0 0 0 1.18 3.02 12.94 12.94 0 0 0 4.97 4.58 16.93 16.93 0 0 0 1.67.62 4 4 0 0 0 1.83.12 3 3 0 0 0 2-1.44 2.44 2.44 0 0 0 .17-1.44c-.07-.1-.26-.17-.55-.31Z"/></svg>
-                                </a>
-                                <a href="mailto:alex@tekeleza.org" class="text-teal-600 hover:text-teal-800 transition-colors" aria-label="Email">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 2v.01L12 13 4 6.01V6h16ZM4 18V8.24l7.4 6.42a1 1 0 0 0 1.2 0L20 8.24V18H4Z"/></svg>
-                                </a>
-                                <a href="https://www.linkedin.com/in/alex-mwangi" target="_blank" class="text-teal-600 hover:text-teal-800 transition-colors" aria-label="LinkedIn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V23h-4V8zm7 0h3.82v2.05h.05C12.1 8.67 13.8 7.5 16.1 7.5 21 7.5 22 10.72 22 15.13V23h-4v-6.58c0-1.57-.03-3.6-2.2-3.6-2.21 0-2.55 1.72-2.55 3.49V23h-4V8z"/></svg>
-                                </a>
-                                <a href="https://alexmwangi.dev" target="_blank" class="text-teal-600 hover:text-teal-800 transition-colors" aria-label="Portfolio Website">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Leader 2 -->
-                <div class="swiper-slide">
-                    <div class="leader-card group w-64 sm:w-72 h-80 bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden relative">
-                        <div class="flex justify-center pt-5">
-                            <div class="ring-animated p-[2px] rounded-full">
-                                <div class="bg-white rounded-full p-[3px]">
-                                    <img src="images/member11.jpg" alt="Leader 2" class="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold text-gray-900">Naomi Njoroge</h3>
-                            <p class="text-teal-700 text-sm">Programs Lead</p>
-                            <p class="text-gray-600 text-sm mt-2 italic">“Mentorship multiplies potential.”</p>
-                            <div class="flex items-center gap-3 mt-3">
-                                <a href="https://wa.me/254723456789" target="_blank" class="text-teal-600 hover:text-teal-800 transition-colors" aria-label="WhatsApp">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M20.52 3.48A11.77 11.77 0 0 0 12 .25 11.76 11.76 0 0 0 .25 12 11.62 11.62 0 0 0 2.7 19.3L1 23l3.85-1.65A11.76 11.76 0 0 0 12 23.75 11.76 11.76 0 0 0 23.75 12 11.76 11.76 0 0 0 20.52 3.48ZM12 21.5a9.5 9.5 0 0 1-4.85-1.31l-.35-.2-2.28 1 1-2.22-.23-.36A9.5 9.5 0 1 1 21.5 12 9.51 9.51 0 0 1 12 21.5Zm5.29-7.2c-.29-.14-1.72-.85-1.98-.95s-.46-.14-.65.14-.75.95-.92 1.15-.34.22-.63.07a7.75 7.75 0 0 1-2.29-1.41 8.57 8.57 0 0 1-1.6-2c-.17-.29 0-.45.13-.59s.29-.34.43-.52.19-.29.29-.48a.52.52 0 0 0 0-.51c-.08-.14-.65-1.56-.89-2.14s-.48-.5-.65-.5h-.56a1.08 1.08 0 0 0-.78.37 3.28 3.28 0 0 0-1 2.43 5.68 5.68 0 0 0 1.18 3.02 12.94 12.94 0 0 0 4.97 4.58 16.93 16.93 0 0 0 1.67.62 4 4 0 0 0 1.83.12 3 3 0 0 0 2-1.44 2.44 2.44 0 0 0 .17-1.44c-.07-.1-.26-.17-.55-.31Z"/></svg>
-                                </a>
-                                <a href="mailto:jane@tekeleza.org" class="text-teal-600 hover:text-teal-800 transition-colors" aria-label="Email">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 2v.01L12 13 4 6.01V6h16ZM4 18V8.24l7.4 6.42a1 1 0 0 0 1.2 0L20 8.24V18H4Z"/></svg>
-                                </a>
-                                <a href="https://www.linkedin.com/in/jane-achieng" target="_blank" class="text-teal-600 hover:text-teal-800 transition-colors" aria-label="LinkedIn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V23h-4V8zm7 0h3.82v2.05h.05C12.1 8.67 13.8 7.5 16.1 7.5 21 7.5 22 10.72 22 15.13V23h-4v-6.58c0-1.57-.03-3.6-2.2-3.6-2.21 0-2.55 1.72-2.55 3.49V23h-4V8z"/></svg>
-                                </a>
-                               
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Leader 3 -->
-                <div class="swiper-slide">
-                    <div class="leader-card group w-64 sm:w-72 h-80 bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden relative">
-                        <div class="flex justify-center pt-5">
-                            <div class="ring-animated p-[2px] rounded-full">
-                                <div class="bg-white rounded-full p-[3px]">
-                                    <img src="images/jn.jpeg" alt="Leader 3" class="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold text-gray-900">James Kariuki</h3>
-                            <p class="text-teal-700 text-sm">Project Manager</p>
-                            <p class="text-gray-600 text-sm mt-2 italic">“Collaboration compounds outcomes.”</p>
-                            <div class="flex items-center gap-3 mt-3">
-                                <a href="https://wa.me/254797394442" target="_blank" class="text-teal-600 hover:text-teal-800 transition-colors" aria-label="WhatsApp">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M20.52 3.48A11.77 11.77 0 0 0 12 .25 11.76 11.76 0 0 0 .25 12 11.62 11.62 0 0 0 2.7 19.3L1 23l3.85-1.65A11.76 11.76 0 0 0 12 23.75 11.76 11.76 0 0 0 23.75 12 11.76 11.76 0 0 0 20.52 3.48ZM12 21.5a9.5 9.5 0 0 1-4.85-1.31l-.35-.2-2.28 1 1-2.22-.23-.36A9.5 9.5 0 1 1 21.5 12 9.51 9.51 0 0 1 12 21.5Zm5.29-7.2c-.29-.14-1.72-.85-1.98-.95s-.46-.14-.65.14-.75.95-.92 1.15-.34.22-.63.07a7.75 7.75 0 0 1-2.29-1.41 8.57 8.57 0 0 1-1.6-2c-.17-.29 0-.45.13-.59s.29-.34.43-.52.19-.29.29-.48a.52.52 0 0 0 0-.51c-.08-.14-.65-1.56-.89-2.14s-.48-.5-.65-.5h-.56a1.08 1.08 0 0 0-.78.37 3.28 3.28 0 0 0-1 2.43 5.68 5.68 0 0 0 1.18 3.02 12.94 12.94 0 0 0 4.97 4.58 16.93 16.93 0 0 0 1.67.62 4 4 0 0 0 1.83.12 3 3 0 0 0 2-1.44 2.44 2.44 0 0 0 .17-1.44c-.07-.1-.26-.17-.55-.31Z"/></svg>
-                                </a>
-                                <a href="juniorkariuki735@gmail.com" class="text-teal-600 hover:text-teal-800" aria-label="Email">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 2v.01L12 13 4 6.01V6h16ZM4 18V8.24l7.4 6.42a1 1 0 0 0 1.2 0L20 8.24V18H4Z"/></svg>
-                                </a>
-                                <a href="https://linkedin.com/in/james-kariuki-" target="_blank" class="text-teal-600 hover:text-teal-800" aria-label="LinkedIn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V23h-4V8zm7 0h3.82v2.05h.05C12.1 8.67 13.8 7.5 16.1 7.5 21 7.5 22 10.72 22 15.13V23h-4v-6.58c0-1.57-.03-3.6-2.2-3.6-2.21 0-2.55 1.72-2.55 3.49V23h-4V8z"/></svg>
-                                </a>
-                                <a href="https://james-kariuki.xyz/" target="_blank" class="text-teal-600 hover:text-teal-800 transition-colors" aria-label="Portfolio Website">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Leader 4 -->
-                <div class="swiper-slide">
-                    <div class="leader-card group w-64 sm:w-72 h-80 bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden relative">
-                        <div class="flex justify-center pt-5">
-                            <div class="ring-animated p-[2px] rounded-full">
-                                <div class="bg-white rounded-full p-[3px]">
-                                    <img src="images/m7.jpg" alt="Leader 4" class="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold text-gray-900">Jeremiah Osindi</h3>
-                            <p class="text-teal-700 text-sm">Research Director</p>
-                            <p class="text-gray-600 text-sm mt-2 italic">"Inclusion powers innovation."</p>
-                            <div class="flex items-center gap-3 mt-3">
-                                <a href="https://wa.me/254734567890" target="_blank" class="text-teal-600 hover:text-teal-800 transition-colors" aria-label="WhatsApp">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M20.52 3.48A11.77 11.77 0 0 0 12 .25 11.76 11.76 0 0 0 .25 12 11.62 11.62 0 0 0 2.7 19.3L1 23l3.85-1.65A11.76 11.76 0 0 0 12 23.75 11.76 11.76 0 0 0 23.75 12 11.76 11.76 0 0 0 20.52 3.48ZM12 21.5a9.5 9.5 0 0 1-4.85-1.31l-.35-.2-2.28 1 1-2.22-.23-.36A9.5 9.5 0 1 1 21.5 12 9.51 9.51 0 0 1 12 21.5Zm5.29-7.2c-.29-.14-1.72-.85-1.98-.95s-.46-.14-.65.14-.75.95-.92 1.15-.34.22-.63.07a7.75 7.75 0 0 1-2.29-1.41 8.57 8.57 0 0 1-1.6-2c-.17-.29 0-.45.13-.59s.29-.34.43-.52.19-.29.29-.48a.52.52 0 0 0 0-.51c-.08-.14-.65-1.56-.89-2.14s-.48-.5-.65-.5h-.56a1.08 1.08 0 0 0-.78.37 3.28 3.28 0 0 0-1 2.43 5.68 5.68 0 0 0 1.18 3.02 12.94 12.94 0 0 0 4.97 4.58 16.93 16.93 0 0 0 1.67.62 4 4 0 0 0 1.83.12 3 3 0 0 0 2-1.44 2.44 2.44 0 0 0 .17-1.44c-.07-.1-.26-.17-.55-.31Z"/></svg>
-                                </a>
-                                <a href="mailto:faith@tekeleza.org" class="text-teal-600 hover:text-teal-800 transition-colors" aria-label="Email">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 2v.01L12 13 4 6.01V6h16ZM4 18V8.24l7.4 6.42a1 1 0 0 0 1.2 0L20 8.24V18H4Z"/></svg>
-                                </a>
-                                <a href="https://www.linkedin.com/in/faith-njeri" target="_blank" class="text-teal-600 hover:text-teal-800 transition-colors" aria-label="LinkedIn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V23h-4V8zm7 0h3.82v2.05h.05C12.1 8.67 13.8 7.5 16.1 7.5 21 7.5 22 10.72 22 15.13V23h-4v-6.58c0-1.57-.03-3.6-2.2-3.6-2.21 0-2.55 1.72-2.55 3.49V23h-4V8z"/></svg>
-                                </a>
-                               
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Leader 5 -->
-                <div class="swiper-slide">
-                    <div class="leader-card group w-64 sm:w-72 h-80 bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden relative">
-                        <div class="flex justify-center pt-5">
-                            <div class="ring-animated p-[2px] rounded-full">
-                                <div class="bg-white rounded-full p-[3px]">
-                                    <img src="images/member22.jpg" alt="Leader 5" class="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold text-gray-900">Nathan </h3>
-                            <p class="text-teal-700 text-sm">Displinary Lead</p>
-                            <p class="text-gray-600 text-sm mt-2 italic">"Build small, iterate fast."</p>
-                            <div class="flex items-center gap-3 mt-3">
-                                <a href="https://wa.me/254745678901" target="_blank" class="text-teal-600 hover:text-teal-800 transition-colors" aria-label="WhatsApp">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M20.52 3.48A11.77 11.77 0 0 0 12 .25 11.76 11.76 0 0 0 .25 12 11.62 11.62 0 0 0 2.7 19.3L1 23l3.85-1.65A11.76 11.76 0 0 0 12 23.75 11.76 11.76 0 0 0 23.75 12 11.76 11.76 0 0 0 20.52 3.48ZM12 21.5a9.5 9.5 0 0 1-4.85-1.31l-.35-.2-2.28 1 1-2.22-.23-.36A9.5 9.5 0 1 1 21.5 12 9.51 9.51 0 0 1 12 21.5Zm5.29-7.2c-.29-.14-1.72-.85-1.98-.95s-.46-.14-.65.14-.75.95-.92 1.15-.34.22-.63.07a7.75 7.75 0 0 1-2.29-1.41 8.57 8.57 0 0 1-1.6-2c-.17-.29 0-.45.13-.59s.29-.34.43-.52.19-.29.29-.48a.52.52 0 0 0 0-.51c-.08-.14-.65-1.56-.89-2.14s-.48-.5-.65-.5h-.56a1.08 1.08 0 0 0-.78.37 3.28 3.28 0 0 0-1 2.43 5.68 5.68 0 0 0 1.18 3.02 12.94 12.94 0 0 0 4.97 4.58 16.93 16.93 0 0 0 1.67.62 4 4 0 0 0 1.83.12 3 3 0 0 0 2-1.44 2.44 2.44 0 0 0 .17-1.44c-.07-.1-.26-.17-.55-.31Z"/></svg>
-                                </a>
-                                <a href="mailto:samuel@tekeleza.org" class="text-teal-600 hover:text-teal-800 transition-colors" aria-label="Email">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 2v.01L12 13 4 6.01V6h16ZM4 18V8.24l7.4 6.42a1 1 0 0 0 1.2 0L20 8.24V18H4Z"/></svg>
-                                </a>
-                                <a href="https://www.linkedin.com/in/samuel-kimani" target="_blank" class="text-teal-600 hover:text-teal-800 transition-colors" aria-label="LinkedIn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V23h-4V8zm7 0h3.82v2.05h.05C12.1 8.67 13.8 7.5 16.1 7.5 21 7.5 22 10.72 22 15.13V23h-4v-6.58c0-1.57-.03-3.6-2.2-3.6-2.21 0-2.55 1.72-2.55 3.49V23h-4V8z"/></svg>
-                                </a>
-                               
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Leader 6 (duplicate for loop smoothness if needed) -->
-                <div class="swiper-slide">
-                    <div class="leader-card group w-64 sm:w-72 h-80 bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden relative">
-                        <div class="flex justify-center pt-5">
-                            <div class="ring-animated p-[2px] rounded-full">
-                                <div class="bg-white rounded-full p-[3px]">
-                                    <img src="images/m12.jpeg" alt="Leader 6" class="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold text-gray-900">Maina</h3>
-                            <p class="text-teal-700 text-sm">Creativity Lead</p>
-                            <p class="text-gray-600 text-sm mt-2 italic">"Clarity creates momentum."</p>
-                            <div class="flex items-center gap-3 mt-3">
-                                <a href="https://wa.me/254756789012" target="_blank" class="text-teal-600 hover:text-teal-800 transition-colors" aria-label="WhatsApp">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M20.52 3.48A11.77 11.77 0 0 0 12 .25 11.76 11.76 0 0 0 .25 12 11.62 11.62 0 0 0 2.7 19.3L1 23l3.85-1.65A11.76 11.76 0 0 0 12 23.75 11.76 11.76 0 0 0 23.75 12 11.76 11.76 0 0 0 20.52 3.48ZM12 21.5a9.5 9.5 0 0 1-4.85-1.31l-.35-.2-2.28 1 1-2.22-.23-.36A9.5 9.5 0 1 1 21.5 12 9.51 9.51 0 0 1 12 21.5Zm5.29-7.2c-.29-.14-1.72-.85-1.98-.95s-.46-.14-.65.14-.75.95-.92 1.15-.34.22-.63.07a7.75 7.75 0 0 1-2.29-1.41 8.57 8.57 0 0 1-1.6-2c-.17-.29 0-.45.13-.59s.29-.34.43-.52.19-.29.29-.48a.52.52 0 0 0 0-.51c-.08-.14-.65-1.56-.89-2.14s-.48-.5-.65-.5h-.56a1.08 1.08 0 0 0-.78.37 3.28 3.28 0 0 0-1 2.43 5.68 5.68 0 0 0 1.18 3.02 12.94 12.94 0 0 0 4.97 4.58 16.93 16.93 0 0 0 1.67.62 4 4 0 0 0 1.83.12 3 3 0 0 0 2-1.44 2.44 2.44 0 0 0 .17-1.44c-.07-.1-.26-.17-.55-.31Z"/></svg>
-                                </a>
-                                <a href="mailto:zahra@tekeleza.org" class="text-teal-600 hover:text-teal-800 transition-colors" aria-label="Email">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 2v.01L12 13 4 6.01V6h16ZM4 18V8.24l7.4 6.42a1 1 0 0 0 1.2 0L20 8.24V18H4Z"/></svg>
-                                </a>
-                                <a href="https://www.linkedin.com/in/zahra-ali" target="_blank" class="text-teal-600 hover:text-teal-800 transition-colors" aria-label="LinkedIn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V23h-4V8zm7 0h3.82v2.05h.05C12.1 8.67 13.8 7.5 16.1 7.5 21 7.5 22 10.72 22 15.13V23h-4v-6.58c0-1.57-.03-3.6-2.2-3.6-2.21 0-2.55 1.72-2.55 3.49V23h-4V8z"/></svg>
-                                </a>
-                               
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+    <main class="container">
+        <section id="leaders">
+            <div class="section-title">
+                <h2>Our Leaders</h2>
+                <p>The visionaries driving Tekeleza Hub forward.</p>
             </div>
-            
-        </div>
-    </section>
-    
+            <div class="swiper mySwiper swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="glass-card leader-card">
+                            <img src="images/m6.jpg" alt="John Maina" class="leader-avatar" loading="lazy">
+                            <h3>John Maina</h3>
+                            <p class="text-primary">Executive Director</p>
+                            <p style="margin-top: 1rem; font-style: italic;">“Success is shared, not hoarded.”</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="glass-card leader-card">
+                            <img src="images/member11.jpg" alt="Naomi Njoroge" class="leader-avatar" loading="lazy">
+                            <h3>Naomi Njoroge</h3>
+                            <p class="text-primary">Programs Lead</p>
+                            <p style="margin-top: 1rem; font-style: italic;">“Mentorship multiplies potential.”</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="glass-card leader-card">
+                            <img src="images/jn.jpeg" alt="James Kariuki" class="leader-avatar" loading="lazy">
+                            <h3>James Kariuki</h3>
+                            <p class="text-primary">Project Manager</p>
+                            <p style="margin-top: 1rem; font-style: italic;">“Collaboration compounds outcomes.”</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="glass-card leader-card">
+                            <img src="images/m7.jpg" alt="Jeremiah Osindi" class="leader-avatar" loading="lazy">
+                            <h3>Jeremiah Osindi</h3>
+                            <p class="text-primary">Research Director</p>
+                            <p style="margin-top: 1rem; font-style: italic;">"Inclusion powers innovation."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
 
-    <!-- Story Content Section -->
-    <div id="content" class="container mx-auto p-6 ">
-        <div class="space-y-8">
-            <section class="content-section p-6" data-aos="fade-up">
-                <h2 class="text-3xl font-bold mb-4">Introduction</h2>
-                <p class="text-lg leading-relaxed">
-                    In today’s rapidly evolving world, innovation is the driving force of progress. However, for many aspiring innovators especially young minds the journey from concept to creation is often filled with challenges: limited resources, lack of mentorship, and restricted opportunities. Without the right support system, many brilliant ideas never reach their full potential.
-
-This is where Tekeleza steps in. More than just an organization, Tekeleza is a movement a community driven initiative dedicated to empowering individuals and providing them with the tools, guidance, and networks they need to turn their ideas into impactful solutions.
-
-Born out of a passion for bridging gaps in mentorship, resources, and opportunities, Tekeleza is committed to nurturing the next generation of problem-solvers, entrepreneurs, and innovators. We believe that mentorship, collaboration, and continuous learning are the foundation of groundbreaking innovation. By fostering a supportive ecosystem where innovators can connect with experienced mentors, gain access to essential resources, and learn from one another, we are igniting a movement of change-makers ready to tackle both local and global challenges.
-
-At Tekeleza, we don’t just support ideas we bring them to life. Together, we are building a future where innovation knows no boundaries.
-                </p>
-                
+        <div id="content">
+            <section class="story-section">
+                <div class="glass-card">
+                    <h2>Introduction</h2>
+                    <p>In today’s rapidly evolving world, innovation is the driving force of progress. However, for many aspiring innovators especially young minds the journey from concept to creation is often filled with challenges: limited resources, lack of mentorship, and restricted opportunities.</p>
+                    <p>Born out of a passion for bridging gaps, Tekeleza is committed to nurturing the next generation of problem-solvers, entrepreneurs, and innovators. At Tekeleza, we don’t just support ideas—we bring them to life.</p>
+                </div>
             </section>
 
-            <section class="content-section p-6" data-aos="fade-up">
-                <h2 class="text-3xl font-bold mb-4">The Birth of Tekeleza</h2>
-                <p class="text-lg leading-relaxed">
-                    
-
-Out of our community’s concerns, and to bridge the gaps of innovative mentorship opportunities, Tekeleza emerged.  Lots of bright young minds had notions but lacked adequate support or resources to actualize them. They faced a lot of barriers, such as limited access to funding, absence of industry knowledge, lack of supportive social networks, and so on. Towards their dreams stood a plethora of obstacles.
-
-Our founders sought collaboration innovation and access to expertise. They knew that through this, young innovators could develop solutions that serve society with the right guidance and knowledge sharing. Our community was built on the ideals of inclusion, mentorship, and collaboration. With this vision Tekeleza was born. We are not just another organization.
-
-The essence of Tekeleza brought us with a rather profound question, how to encourage innovation through connection and knowledge sharing.
-
-
-                </p>
-                <p class="text-lg leading-relaxed mt-4">
-                    Our founders knew that innovation flourishes when people come together, share ideas, and have access to the right guidance. They believed that with the right support, young innovators could create solutions that not only improve their own lives but also make a real difference in society. With this vision, Tekeleza was born not just as an organization, but as a community built on collaboration, inclusivity, and mentorship.
-
-                    At our core, we exist to bring people together, share knowledge, and spark innovation.
-                </p>
-                
+            <section class="story-section">
+                <div class="glass-card">
+                    <h2>The Birth of Tekeleza</h2>
+                    <p>Out of our community’s concerns, and to bridge the gaps of innovative mentorship opportunities, Tekeleza emerged. Lots of bright young minds had notions but lacked adequate support or resources to actualize them. They faced a lot of barriers, such as limited access to funding, absence of industry knowledge, and lack of supportive social networks.</p>
+                    <p>Our founders knew that innovation flourishes when people come together, share ideas, and have access to the right guidance. They believed that with the right support, young innovators could create solutions that not only improve their own lives but also make a real difference in society.</p>
+                </div>
             </section>
 
-            <section id="mentorship" class="content-section p-6" data-aos="fade-up" >
-                <h2 class="text-3xl font-bold mb-4">Mentorship: The Heart of Tekeleza's Success</h2>
-                <p class="text-lg leading-relaxed">
-                    At the heart of Tekeleza is our deep rooted belief in mentorship as a catalyst for growth. Innovation is never a solo journey it thrives on guidance, shared wisdom, and the support of those who have walked the path before. Great mentors don’t just teach skills; they shape mindsets, open doors, and illuminate possibilities.
-
-                    That’s why our mentorship programs go beyond traditional learning. We pair ambitious innovators with industry experts, experienced entrepreneurs, and seasoned professionals who genuinely care about seeing the next generation succeed. These mentors don’t just offer technical expertise they provide real-world insights, help navigate challenges, and share hard-earned lessons on resilience, leadership, and scaling impact-driven ideas.
-                    
-                    What sets Tekeleza’s mentorship apart? It’s deeply personal. We recognize that every innovator’s journey is unique, with different goals, challenges, and strengths. That’s why our mentorship approach is flexible, interactive, and tailored ensuring that each mentee gets the right guidance, resources, and connections they need to turn their vision into reality.
-                    
-                    At Tekeleza, we don’t just mentor we empower, uplift, and transform the innovators of today into the leaders of tomorrow.
-                </p>
-                
-                </p>
-            </section>
-
-            <section class="content-section p-6" id="connecting innovators" data-aos="fade-up">
-                <h2 class="text-3xl font-bold mb-4">Connecting Innovators: Networking Events and Opportunities</h2>
-                <p class="text-lg leading-relaxed">
-                    In addition to mentorship, Tekeleza provides a platform for networking and collaboration. Innovation does not happen in isolation  it thrives when there is the exchange of ideas, collaboration, and the ability to learn from others. Tekeleza understands the power of bringing people together and creating opportunities for them to share ideas, form partnerships, and access resources that would otherwise be out of reach.
-
-Our networking events are designed to connect innovators, entrepreneurs, investors, and professionals from diverse industries. Whether through meetups, conferences, or online webinars, these events provide a space for individuals to showcase their work, discuss trends, and build relationships that may lead to new collaborations or opportunities.
-                </p>
-              
-            </section>
-
-            <section class="content-section p-6" id="skill sharing" data-aos="fade-up">
-                <h2 class="text-3xl font-bold mb-4">Skill Sharing: A Platform for Growth</h2>
-                <p class="text-lg leading-relaxed">
-                    One of the driving forces behind innovation is the ability to learn, adapt, and stay ahead in a world where technology evolves at lightning speed. At Tekeleza, we believe that learning should never stop and that the best way to grow is by sharing knowledge and experiences with others.
-
-                    That’s why we’ve built a collaborative skill sharing platform where innovators can expand their expertise, explore new fields, and keep up with the latest tech trends. Through hands-on workshops, interactive webinars, and in-depth training sessions, we cover a wide range of essential topics, including:
-                    
-                    Cutting edge coding languages and software development
-                    Digital marketing and business strategy
-                    Leadership and entrepreneurial skills
-                    Sustainability and ethical innovation
-                    What makes Tekeleza different? Our learning culture is two-way. Community members are not just learners they are also teachers, mentors, and contributors. By encouraging everyone to share their expertise, we create an environment where growth is mutual, success is collective, and innovation thrives.
-                
-            </section>
-
-            <section class="content-section p-6" data-aos="fade-up">
-                <h2 class="text-3xl font-bold mb-4">Shaping the Future Together</h2>
-                <p class="text-lg leading-relaxed">
-                    As Tekeleza continues its journey of growth and impact, we remain steadfast in our mission to empower innovators and foster meaningful collaborations. The world’s most pressing challenges ranging from global health crises and climate change to economic disparities demand bold, creative solutions. These solutions are not the work of a single mind but the result of diverse thinkers, problem solvers, and changemakers working together.
-
-                    Tekeleza is not just an organization it is a movement built on the power of community, mentorship, and shared purpose. We believe in a future where innovation is not limited by background, geography, or resources, but rather fueled by passion, knowledge, and collaboration.
-                    
-                    Through our mentorship programs, skill building initiatives, and networking opportunities, we are creating an ecosystem where ideas flourish, solutions emerge, and lives are transformed. By standing at the intersection of technology and social impact, we are shaping a world where everyone regardless of their circumstances has access to the tools, knowledge, and networks needed to innovate and succeed.
-                    
-                    At Tekeleza, we don’t just talk about change we create it. The future belongs to those who dare to innovate, and together, we are making that future a reality.
-                </p>
-               
-            </section>
-
-            <section class="content-section p-6" data-aos="fade-up">
-                <h2 class="text-3xl font-bold mb-4">Conclusion: A Call to Action</h2>
-                <p class="text-lg leading-relaxed">
-                    Tekeleza is about more than just technological innovation; it’s about creating a culture of support, empowerment, and
-                    collaboration. Our community based approach ensures that every innovator, regardless of their background, has access
-                    to the tools, knowledge, and connections needed to succeed. We are committed to bridging gaps, fostering connections,
-                    and shaping a future where innovation knows no bounds.
-                </p>
-                <p class="text-lg leading-relaxed mt-4">
-                    Join us at Tekeleza and be part of a movement that is transforming lives and communities through the power of innovation
-                    and shared purpose. Together, we can create opportunities that have the potential to change the world.
-                </p>
+            <section class="story-section">
+                <div class="glass-card">
+                    <h2>Mentorship: Our Heartbeat</h2>
+                    <p>At the heart of Tekeleza is our deep rooted belief in mentorship as a catalyst for growth. Innovation is never a solo journey it thrives on guidance, shared wisdom, and the support of those who have walked the path before.</p>
+                    <p>We pair ambitious innovators with industry experts, experienced entrepreneurs, and seasoned professionals who genuinely care about seeing the next generation succeed. We recognize that every innovator’s journey is unique, which is why our approach is flexible, interactive, and tailored.</p>
+                </div>
             </section>
         </div>
-    </div>
+    </main>
 
-    <!-- Mini Game: Catch the Orbs -->
-    <section id="game" class="container mx-auto px-6 pb-16" data-aos="fade-up">
-        <h2 class="text-2xl md:text-3xl font-bold text-teal-700 mb-3">Mini‑Game: Neon Runner</h2>
-        <p class="text-gray-600 mb-4">Press Space/Up or tap to jump. Avoid obstacles and go for a high score!</p>
-        <canvas id="runnerCanvas" width="900" height="260" class="w-full bg-white rounded-xl shadow border"></canvas>
-    </section>
+    <footer>
+        <div class="footer-socials" style="margin-bottom: 1.5rem; display: flex; justify-content: center; gap: 1.5rem; font-size: 1.5rem;">
+            <a href="#" style="color: white;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: white;"><i class="fab fa-twitter"></i></a>
+            <a href="#" style="color: white;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: white;"><i class="fab fa-linkedin"></i></a>
+            <a href="#" style="color: white;"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2026 Tekeleza Hub. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">Innovate. Empower. Transform.</p>
+    </footer>
 
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
-    
     <script>
-      AOS.init({ once: true, duration: 700, offset: 80 });
-      const swiper = new Swiper('.mySwiper', {
-        loop: true,
-        pagination: { el: '.swiper-pagination', clickable: true },
-        autoplay: { delay: 2200, disableOnInteraction: false, pauseOnMouseEnter: true },
-        slidesPerView: 1,
-        centeredSlides: false,
-        spaceBetween: 8,
-        speed: 600,
-        breakpoints: {
-          360: { slidesPerView: 1, centeredSlides: false, spaceBetween: 4 },
-          480: { slidesPerView: 1, centeredSlides: false, spaceBetween: 6 },
-          640: { slidesPerView: 1, centeredSlides: false, spaceBetween: 8 },
-          768: { slidesPerView: 2, centeredSlides: false, spaceBetween: 12 },
-          1024: { slidesPerView: 3, centeredSlides: false, spaceBetween: 16 }
-        }
-      });
-
-      // Pause autoplay on hover, resume on mouse leave
-      const swiperContainer = document.querySelector('.mySwiper');
-      if (swiperContainer) {
-        swiperContainer.addEventListener('mouseenter', () => {
-          swiper.autoplay.stop();
+        const swiper = new Swiper('.mySwiper', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            slidesPerView: 1,
+            spaceBetween: 20,
+            breakpoints: {
+                640: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+            }
         });
-        swiperContainer.addEventListener('mouseleave', () => {
-          swiper.autoplay.start();
-        });
-      }
-
-      // Enhanced Mobile Read More/Show Less for all content sections
-      (function() {
-        const isMobile = window.innerWidth <= 768;
-        if (!isMobile) return;
-        const content = document.getElementById('content');
-        if (!content) return;
-        const sections = Array.from(content.querySelectorAll('section'));
-        sections.forEach(section => {
-          const paragraphs = Array.from(section.querySelectorAll('p'));
-          paragraphs.forEach(p => {
-            const fullText = p.textContent.trim();
-            if (fullText.length < 300) return;
-            const shortText = fullText.slice(0, 180).replace(/\s+$/,'') + '...';
-            p.setAttribute('data-full', fullText);
-            p.textContent = shortText;
-            const toggle = document.createElement('button');
-            toggle.type = 'button';
-            toggle.className = 'ml-2 px-3 py-1 bg-gradient-to-r from-teal-500 to-blue-500 text-white text-sm font-semibold rounded-full hover:from-teal-600 hover:to-blue-600 transition-all duration-200 shadow-sm';
-            toggle.textContent = 'Read more';
-            toggle.addEventListener('click', () => {
-              const expanded = toggle.getAttribute('data-expanded') === 'true';
-              if (expanded) {
-                p.textContent = shortText;
-                toggle.textContent = 'Read more';
-                toggle.setAttribute('data-expanded', 'false');
-                p.appendChild(toggle);
-              } else {
-                p.textContent = fullText + ' ';
-                toggle.textContent = 'Show less';
-                toggle.setAttribute('data-expanded', 'true');
-                p.appendChild(toggle);
-              }
-            });
-            p.appendChild(toggle);
-          });
-        });
-      })();
-
-      // Simple endless runner
-      const rc = document.getElementById('runnerCanvas');
-      const rctx = rc.getContext('2d');
-      let groundY = rc.height - 28;
-      let player = { x: 60, y: groundY - 30, w: 24, h: 30, vy: 0, onGround: true };
-      let obstacles = [];
-      let scoreR = 0; let best = 0; let speedBase = 3;
-      let lastSpawn = 0;
-
-      function spawnObstacle() {
-        const h = 20 + Math.random()*25;
-        const w = 14 + Math.random()*18;
-        obstacles.push({ x: rc.width + 10, y: groundY - h, w, h, vx: speedBase + scoreR*0.0015 });
-      }
-
-      function resetRunner() { obstacles = []; scoreR = 0; player.y = groundY - player.h; player.vy = 0; player.onGround = true; lastSpawn = 0; }
-
-      function drawPlayer() {
-        // Neon rectangle
-        rctx.fillStyle = '#14b8a6';
-        rctx.fillRect(player.x, player.y, player.w, player.h);
-      }
-      function drawGround() {
-        rctx.strokeStyle = '#e5e7eb';
-        rctx.beginPath(); rctx.moveTo(0, groundY+0.5); rctx.lineTo(rc.width, groundY+0.5); rctx.stroke();
-      }
-      function drawObstacles() {
-        rctx.fillStyle = '#f59e0b';
-        obstacles.forEach(o => rctx.fillRect(o.x, o.y, o.w, o.h));
-      }
-      function drawHUDR() {
-        rctx.fillStyle = '#111827'; rctx.font = '14px system-ui, sans-serif';
-        rctx.fillText('Score: '+Math.floor(scoreR)+'  Best: '+Math.floor(best), 10, 18);
-      }
-      function updateRunner(ts) {
-        rctx.clearRect(0,0,rc.width,rc.height);
-        // gravity
-        player.vy += 0.7; player.y += player.vy;
-        if (player.y >= groundY - player.h) { player.y = groundY - player.h; player.vy = 0; player.onGround = true; }
-        // obstacles
-        if (!lastSpawn || ts - lastSpawn > 900 + Math.random()*600) { spawnObstacle(); lastSpawn = ts; }
-        obstacles.forEach(o => o.x -= (o.vx + scoreR*0.002));
-        obstacles = obstacles.filter(o => o.x + o.w > -10);
-        // collisions
-        for (const o of obstacles) {
-          if (player.x < o.x + o.w && player.x + player.w > o.x && player.y < o.y + o.h && player.y + player.h > o.y) {
-            best = Math.max(best, scoreR); resetRunner(); break;
-          }
-        }
-        scoreR += 1;
-        // draw
-        drawGround(); drawObstacles(); drawPlayer(); drawHUDR();
-        requestAnimationFrame(updateRunner);
-      }
-      requestAnimationFrame(updateRunner);
-      const jump = () => { if (player.onGround) { player.vy = -10.5; player.onGround = false; } };
-      window.addEventListener('keydown', e => { if (e.key === ' ' || e.key === 'ArrowUp') { e.preventDefault(); jump(); } });
-      rc.addEventListener('pointerdown', jump);
     </script>
 </body>
-
+</html>

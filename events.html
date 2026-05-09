@@ -3,817 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Networking Events - Tekeleza Hub</title>
     <link rel="icon" href="images/tekeleza-logo.jpg" type="image/x-icon" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Upcoming Events | Tekeleza Hub - Innovation & Tech Meetups</title>
+    <meta name="description" content="Stay updated with the latest events, workshops, and tech meetups at Tekeleza Hub. Join our community of innovators in Kenya for networking and learning." />
+    <meta property="og:title" content="Upcoming Events | Tekeleza Hub" />
+    <meta property="og:description" content="Join the most exciting tech and innovation events in Kenya." />
+    <meta property="og:image" content="images/tekeleza-logo.jpg" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/modern.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-        
-        /* Navbar styles (unchanged as requested) */
-        .navbar {
-            background-color: #019D91;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 30px;
-            color: white;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 80px;
-            z-index: 1000;
-        }
-
-        .logo img {
-            height: 80px;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-        }
-
-        .nav-links li {
-            margin: 0 15px;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #ffdd57;
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                background-color: #019D91;
-                position: absolute;
-                top: 60px;
-                right: 20px;
-                width: 150px;
-                text-align: left;
-                padding: 10px;
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .menu-toggle {
-                display: block;
-            }
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(120deg, rgba(1,157,145,0.9) 0%, rgba(0,131,121,0.85) 100%), 
-                        url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
-            background-size: cover;
-            background-position: center;
-            padding: 160px 20px 100px;
-            text-align: center;
-            color: white;
-            position: relative;
+        .event-card {
             overflow: hidden;
-            min-height: 60vh;
+            padding: 0;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
         }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-极速 1.343-3 3 1.343 3 3 3zm63 31极速1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4极速-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
-            opacity: 0.6;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            animation: fadeInUp 1s ease-out;
-        }
-        
-        .hero p {
-            font-size: 1.5rem;
-            margin: 0 auto 2rem;
-            animation: fadeInUp 1.2s ease-out;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 30px;
-            animation: fadeInUp 1.4s ease-out;
-        }
-        
-        .hero-btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary {
-            background: white;
-            color: #019D91;
-            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.4);
-        }
-        
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            backdrop-filter: blur(10px);
-            border: 2px solid white;
-        }
-        
-        .btn-secondary:hover {
-            background: white;
-            color: #019D91;
-        }
-        
-        /* Events Section */
-        .events-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: #019D91;
-            margin-bottom: 15px;
-            display: inline-block;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, #019d91, #ffdd57);
-            border-radius: 2px;
-        }
-        
-        .section-title p {
-            font-size: 1.2rem;
-            color: #555;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .events-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-        
-        .event-card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s ease;
-            position: relative;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        
-        .event-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .event-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(1, 157, 145, 0.2);
-        }
-        
         .event-image {
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .event-image img {
             width: 100%;
-            height: 100%;
+            height: 200px;
             object-fit: cover;
-            transition: transform 0.5s ease;
         }
-        
-        .event-card:hover .event-image img {
-            transform: scale(1.1);
-        }
-        
-        .event-date {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: #019D91;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: 500;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 10px rgba(1, 157, 145, 0.3);
-        }
-        
         .event-content {
-            padding: 25px;
+            padding: 1.5rem;
+            flex-grow: 1;
         }
-        
-        .event-content h3 {
-            font-size: 1.5rem;
-            color: #019D91;
-            margin-bottom: 15px;
+        .event-date {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-bottom: 1rem;
         }
-        
         .event-meta {
             display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
         }
-        
-        .event-meta-item {
-            display: flex;
-            align-items: center;
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .event-meta-item i {
-            margin-right: 8px;
-            color: #019D91;
-        }
-        
-        .event-content p {
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        
-        .event-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #019D91, #017a74);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(1, 157, 145, 0.3);
-        }
-        
-        .event-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(1, 157, 145, 0.4);
-        }
-        
-        /* Benefits Section */
-        .benefits-section {
-            background: linear-gradient(135deg, #017d73 0%, #019d91 100%);
-            padding: 80px 20px;
-            color: white;
-            text-align: center;
-            border-radius: 20px;
-            margin-bottom: 60px;
-        }
-        
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 50px auto 0;
-        }
-        
-        .benefit-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.4s ease;
-        }
-        
-        .benefit-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-        
-        .benefit-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 2rem;
-        }
-        
-        .benefit-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-        
-        .benefit-card p {
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-        
-        /* Testimonials Section */
-        .testimonials-section {
-            margin-bottom: 60px;
-        }
-        
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .testimonial-card {
-            background: white;
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 极速, 0.1);
-            position: relative;
-        }
-        
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 4rem;
-            color: rgba(1, 157, 145, 0.1);
-            font-family: Georgia, serif;
-        }
-        
-        .testimonial-text {
-            color: #555;
-            font-style: italic;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-        
-        .author-image {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: 15px;
-        }
-        
-        .author-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .author-info h4 {
-            color: #019D91;
-            margin-bottom: 5px;
-        }
-        
-        .author-info p {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            padding: 80px 20px;
-            text-align: center;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-        
-        .cta-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .cta-content h2 {
-            font-size: 2.5rem;
-            color: #019D91;
-            margin-bottom: 20px;
-        }
-        
-        .cta-content p {
-            font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 30px;
-        }
-        
-        .cta-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #019D91, #017a74);
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(1, 157, 145, 0.3);
-        }
-        
-        .cta-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(1, 157, 145, 0.4);
-        }
-        
-        /* Footer */
-        .footer {
-            background: #03332f;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            margin-top: 60px;
-        }
-        
-        .footer p {
-            opacity: 0.8;
-        }
-        
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes fadeInUp {
-            from { 
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .events-grid, .benefits-grid, .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
+        .event-meta i {
+            color: var(--primary);
+            margin-right: 0.25rem;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="glass">
         <div class="logo">
-            <img src="images/tekeleza-logo-removebg-preview.png" alt="Logo">
+            <img src="images/tekeleza-logo-removebg-preview.png" alt="Tekeleza Hub">
+            <span>Tekeleza Hub</span>
         </div>
-        <ul class="nav-links" id="nav-links">
+        <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#about-us">About Us</a></li>
             <li><a href="story.html">Our Story</a></li>
+            <li><a href="projects.html">Projects</a></li>
             <li><a href="donate.html">Donate</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
-        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
     </nav>
-    
-    <div class="hero">
+
+    <header class="hero">
         <div class="hero-content">
             <h1>Networking Events</h1>
-            <p>Connect, collaborate, and grow with tech enthusiasts and industry professionals</p>
-            <div class="hero-buttons">
-                <a href="#events" class="hero-btn btn-primary">View Events</a>
-                <a href="contact.html" class="hero-btn btn-secondary">Get In Touch</a>
+            <p>Connect, collaborate, and grow with tech enthusiasts and industry professionals.</p>
+            <div class="hero-btns">
+                <a href="#events" class="btn btn-primary">View Events</a>
+                <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
             </div>
         </div>
-    </div>
+    </header>
 
-    <div class="events-container" id="events">
-        <div class="section-title">
-            <h2>Upcoming Events</h2>
-            <p>Join our networking events designed to foster connections and collaboration</p>
-        </div>
-        
-        <div class="events-grid">
-            <div class="event-card">
-                <div class="event-image">
-                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Hackers Night 2025">
-                    <div class="event-date">Sep 16, 2025</div>
-                </div>
-                <div class="event-content">
-                    <h3>Hackers Night 2025</h3>
-                    <div class="event-meta">
-                        <div class="event-meta-item">
-                            <i class="far fa-clock"></i>
-                            <span>9pm - 6am</span>
-                        </div>
-                        <div class="event-meta-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Tharaka University</span>
-                        </div>
-                    </div>
-                    <p>Join us for Hackers Night 2025 at Tharaka University Resource Center! A night of coding, collaboration and creativity. Network with tech enthusiasts, build innovative solutions and challenge yourself.</p>
-                    <a href="#" class="event-btn">Register Now</a>
-                </div>
-            </div>
-            
-            <div class="event-card">
-                <div class="event-image">
-                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Hackathon Meetup">
-                    <div class="event-date">Oct 15, 2025</div>
-                </div>
-                <div class="event-content">
-                    <h3>Hackathon Meetup</h3>
-                    <div class="event-meta">
-                        <div class="event-meta-item">
-                            <i class="far fa-clock"></i>
-                            <span>10am - 6pm</span>
-                        </div>
-                        <div class="event-meta-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Tekeleza Hub, Nairobi</span>
-                        </div>
-                    </div>
-                    <p>A collaborative event where developers, designers, and entrepreneurs come together to create innovative solutions to real-world problems.</p>
-                    <a href="#" class="event-btn">Register Now</a>
-                </div>
-            </div>
-            
-            <div class="event-card">
-                <div class="event-image">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Women in Tech Summit">
-                    <div class="event-date">Nov 10, 2025</div>
-                </div>
-                <div class="event-content">
-                    <h3>Women in Tech Summit</h3>
-                    <div class="event-meta">
-                        <div class="event-meta-item">
-                            <i class="far fa-clock"></i>
-                            <span>9am - 5pm</span>
-                        </div>
-                        <div class="event-meta-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Virtual Event</span>
-                        </div>
-                    </div>
-                    <p>A virtual summit celebrating the contributions of women in the tech industry. Network with inspiring women leaders and learn from their experiences.</p>
-                    <a href="#" class="event-btn">Register Now</a>
-                </div>
-            </div>
-            
-            <div class="event-card">
-                <div class="event-image">
-                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Networking Mixer">
-                    <div class="event-date">Dec 5, 2025</div>
-                </div>
-                <div class="event-content">
-                    <h3>Networking Mixer</h3>
-                    <div class="event-meta">
-                        <div class="event-meta-item">
-                            <i class="far fa-clock"></i>
-                            <span>6pm - 9pm</span>
-                        </div>
-                        <div class="event-meta-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Tekeleza Hub, Nairobi</span>
-                        </div>
-                    </div>
-                    <p>A relaxed networking session where you can meet potential collaborators and industry professionals over drinks and snacks in a casual atmosphere.</p>
-                    <a href="#" class="event-btn">Register Now</a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Benefits Section -->
-        <div class="benefits-section">
+    <main class="container">
+        <section id="events">
             <div class="section-title">
-                <h2 style="color: white;">Why Attend Our Events?</h2>
-                <p style="color: rgba(255,255,255,0.9);">Our networking events offer exceptional opportunities for growth and connection</p>
+                <h2>Upcoming Gatherings</h2>
+                <p>Join our networking events designed to foster connections and collaboration.</p>
             </div>
-            
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-handshake"></i>
+            <div class="grid-3">
+                <div class="glass-card event-card">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Hackers Night" class="event-image">
+                    <div class="event-content">
+                        <span class="event-date">Sep 16, 2025</span>
+                        <h3>Hackers Night 2025</h3>
+                        <div class="event-meta">
+                            <span><i class="far fa-clock"></i> 9pm - 6am</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Tharaka Uni</span>
+                        </div>
+                        <p>A night of coding, collaboration and creativity. Build innovative solutions and challenge yourself.</p>
+                        <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem; display: block; text-align: center;">Register Now</a>
                     </div>
-                    <h3>Make Connections</h3>
-                    <p>Meet like-minded individuals and industry professionals who can help you grow your career</p>
                 </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-lightbulb"></i>
+                <div class="glass-card event-card">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Hackathon" class="event-image">
+                    <div class="event-content">
+                        <span class="event-date">Oct 15, 2025</span>
+                        <h3>Hackathon Meetup</h3>
+                        <div class="event-meta">
+                            <span><i class="far fa-clock"></i> 10am - 6pm</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Tekeleza Hub</span>
+                        </div>
+                        <p>Developers, designers, and entrepreneurs come together to solve real-world problems.</p>
+                        <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem; display: block; text-align: center;">Register Now</a>
                     </div>
-                    <h3>Gain Insights</h3>
-                    <p>Learn from experts and gain valuable insights into the latest industry trends and technologies</p>
                 </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-briefcase"></i>
+                <div class="glass-card event-card">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Women in Tech" class="event-image">
+                    <div class="event-content">
+                        <span class="event-date">Nov 10, 2025</span>
+                        <h3>Women in Tech Summit</h3>
+                        <div class="event-meta">
+                            <span><i class="far fa-clock"></i> 9am - 5pm</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Virtual</span>
+                        </div>
+                        <p>Celebrating the contributions of women in tech. Network with inspiring leaders.</p>
+                        <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem; display: block; text-align: center;">Register Now</a>
                     </div>
-                    <h3>Career Opportunities</h3>
-                    <p>Discover new career paths and opportunities through connections made at our events</p>
                 </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
+            </div>
+        </section>
+
+        <section style="margin: 4rem 0;">
+            <div class="section-title">
+                <h2>Why Attend?</h2>
+            </div>
+            <div class="grid-4">
+                <div class="glass-card feature-card">
+                    <i class="fas fa-handshake fa-2x text-primary" style="margin-bottom: 1rem;"></i>
+                    <h3>Connections</h3>
+                    <p>Meet like-minded individuals and professionals.</p>
+                </div>
+                <div class="glass-card feature-card">
+                    <i class="fas fa-lightbulb fa-2x text-primary" style="margin-bottom: 1rem;"></i>
+                    <h3>Insights</h3>
+                    <p>Learn about latest industry trends.</p>
+                </div>
+                <div class="glass-card feature-card">
+                    <i class="fas fa-briefcase fa-2x text-primary" style="margin-bottom: 1rem;"></i>
+                    <h3>Careers</h3>
+                    <p>Discover new career paths and opportunities.</p>
+                </div>
+                <div class="glass-card feature-card">
+                    <i class="fas fa-users fa-2x text-primary" style="margin-bottom: 1rem;"></i>
                     <h3>Collaborate</h3>
-                    <p>Find potential collaborators for projects or startups and expand your professional network</p>
+                    <p>Find potential project collaborators.</p>
                 </div>
             </div>
-        </div>
-        
-        <!-- Testimonials Section -->
-        <div class="testimonials-section">
-            <div class="section-title">
-                <h2>What Attendees Say</h2>
-                <p>Hear from people who have benefited from our networking events</p>
-            </div>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">The Hackers Night event was incredible! I met so many talented developers and even found a co-founder for my startup. The energy was amazing!</p>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <img src="images/jn.jpeg" alt="James Kariuki">
-                        </div>
-                        <div class="author-info">
-                            <h4>James Kariuki</h4>
-                            <p>Software Developer</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <p class="testimonial-text">As a woman in tech, the Women in Tech Summit was truly inspiring. I connected with mentors who have guided my career progression significantly.</p>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Sarah Mwende">
-                        </div>
-                        <div class="author-info">
-                            <h4>Sarah Mwende</h4>
-                            <p>Data Scientist</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <p class="testimonial-text">The networking mixer had the perfect atmosphere for meaningful conversations. I've secured two new clients from connections I made that evening.</p>
-                    <div class="testimonial-author">
-                        <div class="author-image">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Michael Otieno">
-                        </div>
-                        <div class="author-info">
-                            <h4>Michael Otieno</h4>
-                            <p>UX Designer</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- CTA Section -->
-        <div class="cta-section">
-            <div class="cta-content">
-                <h2>Ready to Expand Your Network?</h2>
-                <p>Join our upcoming events and connect with the tech community</p>
-                <a href="contact.html" class="cta-btn">Get In Touch</a>
-            </div>
-        </div>
-    </div>
-    
-    <div class="footer">
-        <p>&copy; 2023 Tekeleza Hub. All rights reserved.</p>
-    </div>
+        </section>
+    </main>
 
-    <script>
-        // Menu toggle functionality
-        const menuToggle = document.getElementById('menu-toggle');
-        const navLinks = document.getElementById('nav-links');
-        
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        
-        // Animate event cards on scroll
-        const eventCards = document.querySelectorAll('.event-card');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.2
-        });
-        
-        eventCards.forEach(card => {
-            observer.observe(card);
-        });
-        
-        // Add staggered animation delay
-        eventCards.forEach((card, index) => {
-            card.style.transitionDelay = `${index * 0.1}s`;
-        });
-    </script>
+    <footer>
+        <div class="footer-socials" style="margin-bottom: 1.5rem; display: flex; justify-content: center; gap: 1.5rem; font-size: 1.5rem;">
+            <a href="#" style="color: white;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: white;"><i class="fab fa-twitter"></i></a>
+            <a href="#" style="color: white;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: white;"><i class="fab fa-linkedin"></i></a>
+            <a href="#" style="color: white;"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2026 Tekeleza Hub. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">Innovate. Empower. Transform.</p>
+    </footer>
 </body>
 </html>

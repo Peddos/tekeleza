@@ -3,796 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community Projects - Tekeleza Hub</title>
     <link rel="icon" href="images/tekeleza-logo.jpg" type="image/x-icon" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Community Projects | Tekeleza Hub - Driving Impact in Kenya</title>
+    <meta name="description" content="Explore the high-impact projects by Tekeleza Hub. From AI for social good to community-based tech solutions, see how we empower innovators in Kenya." />
+    <meta property="og:title" content="Community Projects | Tekeleza Hub" />
+    <meta property="og:description" content="Innovative tech projects transforming communities in Kenya." />
+    <meta property="og:image" content="images/tekeleza-logo.jpg" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/modern.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-        
-        /* Navbar styles (unchanged as requested) */
-        .navbar {
-            background-color: #019D91;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 30px;
-            color: white;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 80px;
-            z-index: 1000;
-        }
-
-        .logo img {
-            height: 80px;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-        }
-
-        .nav-links li {
-            margin: 0 15px;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            transition: color 极速.3s;
-        }
-
-        .nav-links a:hover {
-            color: #ffdd57;
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                background-color: #019D91;
-                position: absolute;
-                top: 60px;
-                right: 20px;
-                width: 150px;
-                text-align: left;
-                padding: 10px;
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .menu-toggle {
-                display: block;
-            }
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(120deg, rgba(1,157,145,0.9) 0%, rgba(0,131,121,0.85) 100%), 
-                        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
-            background-size: cover;
-            background-position: center;
-            padding: 160px 20px 100px;
-            text-align: center;
-            color: white;
-            position: relative;
+        .project-card {
             overflow: hidden;
-            min-height: 60vh;
+            padding: 0;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
         }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/s极速g'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-极速.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 极速 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5极速m57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.极速4-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
-            opacity: 0.6;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            animation: fadeInUp 1s ease-out;
-        }
-        
-        .hero p {
-            font-size: 1.5rem;
-            margin: 0 auto 2rem;
-            animation: fadeInUp 1.2s ease-out;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 30px;
-            animation: fadeInUp 1.4s ease-out;
-        }
-        
-        .hero-btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary {
-            background: white;
-            color: #019D91;
-            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.4);
-        }
-        
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            backdrop-filter: blur(10px);
-            border: 2px solid white;
-        }
-        
-        .btn-secondary:hover {
-            background: white;
-            color: #019D91;
-        }
-        
-        /* Projects Section */
-        .projects-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: #019D91;
-            margin-bottom: 15px;
-            display: inline-block;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, #019d91, #ffdd57);
-            border-radius: 2px;
-        }
-        
-        .section-title p {
-            font-size: 1.2rem;
-            color: #555;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-        
-        .project-card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s ease;
-            position: relative;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        
-        .project-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(1, 157, 145, 0.2);
-        }
-        
         .project-image {
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .project-image img {
             width: 100%;
-            height: 100%;
+            height: 200px;
             object-fit: cover;
-            transition: transform 0.5s ease;
         }
-        
-        .project-card:hover .project-image img {
-            transform: scale(1.1);
-        }
-        
-        .project-status {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: #ffdd57;
-            color: #333;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-weight: 500;
-            font-size: 0.8rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        
         .project-content {
-            padding: 25px;
-        }
-        
-        .project-content h3 {
-            font-size: 1.5rem;
-            color: #019D91;
-            margin-bottom: 15px;
-        }
-        
-        .project-meta {
+            padding: 1.5rem;
+            flex-grow: 1;
             display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
+            flex-direction: column;
         }
-        
-        .project-meta-item {
-            display: flex;
-            align-items: center;
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        .project-meta-item i {
-            margin-right: 8px;
-            color: #019D91;
-        }
-        
-        .project-content p {
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        
-        .project-btn {
+        .project-status {
             display: inline-block;
-            background: linear-gradient(135deg, #019D91, #017a74);
+            background: var(--primary);
             color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(1, 157, 145, 0.3);
-        }
-        
-        .project-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(1, 157, 145, 0.4);
-        }
-        
-        /* Impact Section */
-        .impact-section {
-            background: linear-gradient(135deg, #017d73 0%, #019d91 100%);
-            padding: 80px 20px;
-            color: white;
-            text-align: center;
+            padding: 0.25rem 0.75rem;
             border-radius: 20px;
-            margin-bottom: 60px;
+            font-size: 0.75rem;
+            margin-bottom: 1rem;
+            align-self: flex-start;
         }
-        
-        .impact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 50px auto 0;
-        }
-        
-        .impact-item {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.4s ease;
-        }
-        
-        .impact-item:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-        
         .impact-number {
             font-size: 3rem;
             font-weight: 700;
-            margin-bottom: 10px;
-            background: linear-gradient(45deg, #ffdd57, #fff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .impact-label {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        
-        /* How to Help Section */
-        .help-section {
-            margin-bottom: 60px;
-        }
-        
-        .help-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 50px auto 0;
-        }
-        
-        .help-option {
-            background: white;
-            border-radius: 16px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s ease;
-        }
-        
-        .help-option:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(1, 157, 145, 0.2);
-        }
-        
-        .help-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(1, 157, 145, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 2rem;
-            color: #019D91;
-        }
-        
-        .help-option h3 {
-            font-size: 1.5rem;
-            color: #019D91;
-            margin-bottom: 15px;
-        }
-        
-        .help-option p {
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        
-        .help-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #019D91, #017a74);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(1, 157, 145, 0.3);
-        }
-        
-        .help-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(1, 157, 145, 0.4);
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            padding: 80px 20px;
-            text-align: center;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-        
-        .cta-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .cta-content h2 {
-            font-size: 2.5rem;
-            color: #019D91;
-            margin-bottom: 20px;
-        }
-        
-        .cta-content p {
-            font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 30px;
-        }
-        
-        .cta-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #019D91, #017a74);
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(1, 157, 145, 0.3);
-        }
-        
-        .cta-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(1, 157, 145, 0.4);
-        }
-        
-        /* Footer */
-        .footer {
-            background: #03332f;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            margin-top: 60px;
-        }
-        
-        .footer p {
-            opacity: 0.8;
-        }
-        
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes fadeInUp {
-            from { 
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .projects-grid, .impact-grid, .help-options {
-                grid-template-columns: 1fr;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
+            color: var(--primary);
+            margin-bottom: 0.5rem;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="glass">
         <div class="logo">
-            <img src="images/tekeleza-logo-removebg-preview.png" alt="Logo">
+            <img src="images/tekeleza-logo-removebg-preview.png" alt="Tekeleza Hub">
+            <span>Tekeleza Hub</span>
         </div>
-        <ul class="nav-links" id="nav-links">
+        <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#about-us">About Us</a></li>
-            <极速><a href="story.html">Our Story</a></li>
+            <li><a href="story.html">Our Story</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
             <li><a href="donate.html">Donate</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
-        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
     </nav>
-    
-    <div class="hero">
+
+    <header class="hero">
         <div class="hero-content">
             <h1>Community Projects</h1>
             <p>Empowering communities through technology, one project at a time.</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="hero-btn btn-primary">Explore Projects</a>
-                <a href="#get-involved" class="hero-btn btn-secondary">Get Involved</a>
+            <div class="hero-btns">
+                <a href="#projects" class="btn btn-primary">Explore Projects</a>
+                <a href="#get-involved" class="btn btn-secondary">Get Involved</a>
             </div>
         </div>
-    </div>
+    </header>
 
-    <div class="projects-container" id="projects">
-        <div class="section-title">
-            <h2>Our Community Projects</h2>
-            <p>Discover how we're making a difference through technology-driven initiatives</p>
-        </div>
-        
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Tech for Education">
-                    <div class="project-status">Upcoming</div>
-                </div>
-                <div class="project-content">
-                    <h3>Tech for Education</h3>
-                    <div class="project-meta">
-                        <div class="project-meta-item">
-                            <i class="fas fa-bullseye"></i>
-                            <span>Digital Literacy</span>
-                        </div>
-                        <div class="project-meta-item">
-                            <i class="fas fa-users"></i>
-                            <span>Underserved Communities</span>
-                        </div>
-                    </div>
-                    <p>This project aims to create accessible tech hubs where individuals can learn coding, digital marketing, and cybersecurity skills. We're working with local schools and NGOs to offer free workshops.</p>
-                    <a href="get-involved.html" class="project-btn">Get Involved</a>
-                </div>
-            </div>
-            
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Women in Tech Empowerment">
-                    <div class="project-status">Upcoming</div>
-                </div>
-                <div class="project-content">
-                    <h3>Women in Tech Empowerment</h3>
-                    <div class="project-meta">
-                        <div class="project-meta-item">
-                            <i class="fas fa-bullseye"></i>
-                            <span>Gender Equality</span>
-                        </div>
-                        <div class="project-meta-item">
-                            <i class="fas fa-users"></i>
-                            <span>Mentorship Program</span>
-                        </div>
-                    </div>
-                    <p>This initiative bridges the gender gap by providing mentorship, scholarships, and networking opportunities for women looking to enter or advance in the tech industry.</p>
-                    <a href="get-involved.html" class="project-btn">Join the Movement</a>
-                </div>
-            </div>
-            
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Startup Incubator Program">
-                    <div class="project-status">Upcoming</div>
-                </div>
-                <div class="project-content">
-                    <h3>Startup Incubator Program</h3>
-                    <div class="project-meta">
-                        <div class="project-meta-item">
-                            <i class="fas fa-bullseye"></i>
-                            <span>Entrepreneurship</span>
-                        </div>
-                        <div class="project-meta-item">
-                            <i class="fas fa-users"></i>
-                            <span>Early-stage Startups</span>
-                        </div>
-                    </div>
-                    <p>Our incubator provides funding, mentoring, and access to a network of investors and entrepreneurs to help early-stage startups scale and thrive in the Kenyan tech ecosystem.</p>
-                    <a href="get-involved.html" class="project-btn">Apply Now</a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Impact Section -->
-        <div class="impact-section">
+    <main class="container">
+        <section id="projects">
             <div class="section-title">
-                <h2 style="color: white;">Our Impact</h2>
-                <p style="color: rgba(255,255,255,0.9);">Measuring the difference we're making in communities</p>
+                <h2>Our Initiatives</h2>
+                <p>Discover how we're making a difference through technology-driven projects.</p>
             </div>
-            
-            <div class="impact-grid">
-                <div class="impact-item">
-                    <div class="impact-number" id="communities">0</div>
-                    <div class="impact-label">Communities Reached</div>
+            <div class="grid-3">
+                <div class="glass-card project-card">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Tech for Education" class="project-image">
+                    <div class="project-content">
+                        <span class="project-status">Upcoming</span>
+                        <h3>Tech for Education</h3>
+                        <p>Creating accessible tech hubs where individuals can learn coding, digital marketing, and cybersecurity skills.</p>
+                        <a href="contact.html" class="btn btn-primary" style="margin-top: auto;">Get Involved</a>
+                    </div>
                 </div>
-                
-                <div class="impact-item">
-                    <div class="impact-number" id="participants">0</div>
-                    <div class="impact-label">Participants Trained</div>
+                <div class="glass-card project-card">
+                    <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Women in Tech" class="project-image">
+                    <div class="project-content">
+                        <span class="project-status">Upcoming</span>
+                        <h3>Women in Tech</h3>
+                        <p>Providing mentorship, scholarships, and networking opportunities for women entering the tech industry.</p>
+                        <a href="contact.html" class="btn btn-primary" style="margin-top: auto;">Join Movement</a>
+                    </div>
                 </div>
-                
-                <div class="impact-item">
-                    <div class="impact-number" id="projects-count">0</div>
-                    <div class="impact-label">Projects Launched</div>
-                </div>
-                
-                <div class="impact-item">
-                    <div class="impact-number" id="volunteers">0</div>
-                    <div class="impact-label">Active Volunteers</div>
+                <div class="glass-card project-card">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Startup Incubator" class="project-image">
+                    <div class="project-content">
+                        <span class="project-status">Upcoming</span>
+                        <h3>Startup Incubator</h3>
+                        <p>Helping early-stage startups scale with funding, mentoring, and access to a network of investors.</p>
+                        <a href="contact.html" class="btn btn-primary" style="margin-top: auto;">Apply Now</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- How to Help Section -->
-        <div class="help-section" id="get-involved">
+        </section>
+
+        <section class="glass" style="margin: 4rem 0; border-radius: var(--radius-lg); padding: 4rem; text-align: center;">
+            <div class="section-title">
+                <h2>Our Impact</h2>
+                <p>Measuring the difference we're making in communities.</p>
+            </div>
+            <div class="grid-4" style="margin-top: 3rem;">
+                <div>
+                    <div class="impact-number">12+</div>
+                    <p>Communities Reached</p>
+                </div>
+                <div>
+                    <div class="impact-number">350+</div>
+                    <p>Participants Trained</p>
+                </div>
+                <div>
+                    <div class="impact-number">8+</div>
+                    <p>Projects Launched</p>
+                </div>
+                <div>
+                    <div class="impact-number">45+</div>
+                    <p>Active Volunteers</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="get-involved">
             <div class="section-title">
                 <h2>How You Can Help</h2>
-                <p>There are multiple ways to get involved and support our community projects</p>
+                <p>Multiple ways to support our community projects.</p>
             </div>
-            
-            <div class="help-options">
-                <div class="help-option">
-                    <div class="help-icon">
-                        <i class="fas fa-hands-helping"></i>
-                    </div>
+            <div class="grid-3">
+                <div class="glass-card feature-card">
+                    <i class="fas fa-hands-helping fa-2x text-primary" style="margin-bottom: 1rem;"></i>
                     <h3>Volunteer</h3>
-                    <p>Share your skills and time with our community. Whether you're a tech expert, teacher, or organizer, we need your help.</p>
-                    <a href="contact.html" class="help-btn">Become a Volunteer</a>
+                    <p>Share your skills and time. We need tech experts, teachers, and organizers.</p>
+                    <a href="contact.html" class="btn btn-secondary">Become a Volunteer</a>
                 </div>
-                
-                <div class="help-option">
-                    <div class="help-icon">
-                        <i class="fas fa-laptop"></i>
-                    </div>
+                <div class="glass-card feature-card">
+                    <i class="fas fa-laptop fa-2x text-primary" style="margin-bottom: 1rem;"></i>
                     <h3>Donate Resources</h3>
-                    <p>Contribute computers, books, or other educational materials to help us equip community learning centers.</p>
-                    <a href="contact.html" class="help-btn">Donate Resources</a>
+                    <p>Contribute computers, books, or materials to equip our learning centers.</p>
+                    <a href="contact.html" class="btn btn-secondary">Donate Resources</a>
                 </div>
-                
-                <div class="help-option">
-                    <div class="help-icon">
-                        <i class="fas fa-donate"></i>
-                    </div>
+                <div class="glass-card feature-card">
+                    <i class="fas fa-donate fa-2x text-primary" style="margin-bottom: 1rem;"></i>
                     <h3>Financial Support</h3>
-                    <p>Your financial contributions help us sustain and expand our programs to reach more communities in need.</p>
-                    <a href="donate.html" class="help-btn">Donate Now</a>
+                    <p>Your contributions help us sustain and expand our programs to more communities.</p>
+                    <a href="donate.html" class="btn btn-secondary">Donate Now</a>
                 </div>
             </div>
-        </div>
-        
-        <!-- CTA Section -->
-        <div class="cta-section">
-            <div class="cta-content">
-                <h2>Ready to Make a Difference?</h2>
-                <p>Join us in our mission to empower communities through technology and innovation</p>
-                <a href="contact.html" class="cta-btn">Get Involved Today</a>
-            </div>
-        </div>
-    </div>
-    
-    <div class="footer">
-        <p>&copy; 2023 Tekeleza Hub. All rights reserved.</p>
-    </div>
+        </section>
+    </main>
 
-    <script>
-        // Menu toggle functionality
-        const menuToggle = document.getElementById('menu-toggle');
-        const navLinks = document.getElementById('nav-links');
-        
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        
-        // Animate project cards on scroll
-        const projectCards = document.querySelectorAll('.project-card');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    
-                    // Animate impact numbers if it's the impact section
-                    if (entry.target.classList.contains('impact-item')) {
-                        animateImpactNumbers();
-                    }
-                }
-            });
-        }, {
-            threshold: 0.2
-        });
-        
-        projectCards.forEach(card => {
-            observer.observe(card);
-        });
-        
-        // Add staggered animation delay
-        projectCards.forEach((card, index) => {
-            card.style.transitionDelay = `${index * 0.1}s`;
-        });
-        
-        // Animate impact numbers
-        function animateImpactNumbers() {
-            const communities = document.getElementById('communities');
-            const participants = document.getElementById('participants');
-            const projectsCount = document.getElementById('projects-count');
-            const volunteers = document.getElementById('volunteers');
-            
-            animateValue(communities, 0, 12, 2000);
-            animateValue(participants, 0, 350, 2000);
-            animateValue(projectsCount, 0, 8, 2000);
-            animateValue(volunteers, 0, 45, 2000);
-        }
-        
-        function animateValue(element, start, end, duration) {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                element.innerHTML = Math.floor(progress * (end - start) + start);
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
-    </script>
+    <footer>
+        <div class="footer-socials" style="margin-bottom: 1.5rem; display: flex; justify-content: center; gap: 1.5rem; font-size: 1.5rem;">
+            <a href="#" style="color: white;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="color: white;"><i class="fab fa-twitter"></i></a>
+            <a href="#" style="color: white;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: white;"><i class="fab fa-linkedin"></i></a>
+            <a href="#" style="color: white;"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2026 Tekeleza Hub. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">Innovate. Empower. Transform.</p>
+    </footer>
 </body>
 </html>
