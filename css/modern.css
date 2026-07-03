@@ -239,6 +239,24 @@ a {
     box-shadow: 0 6px 20px rgba(1,157,145,0.5);
 }
 
+.btn-secondary {
+    padding: 0.9rem 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-family: 'Outfit', sans-serif;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary-light);
+    transform: translateY(-2px);
+}
+
 /* ─── Sections ──────────────────────────────────────── */
 section {
     padding: 80px 5%;
@@ -526,7 +544,7 @@ footer p {
         font-size: 1.8rem;
     }
 
-    .btn-primary {
+    .btn-primary, .btn-secondary {
         padding: 0.8rem 1.6rem;
         font-size: 0.95rem;
         width: 100%;
