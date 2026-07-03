@@ -22,10 +22,41 @@
     <link rel="stylesheet" href="css/modern.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
-        .contact-form {
-            max-width: 600px;
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            max-width: 1100px;
             margin: 4rem auto;
+            align-items: start;
+        }
+        @media (min-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1.2fr 0.8fr;
+            }
+        }
+        .contact-form {
             padding: 3rem;
+            margin: 0;
+            max-width: 100%;
+        }
+        .qr-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 3rem;
+            margin: 0;
+            height: 100%;
+        }
+        .qr-image {
+            max-width: 220px;
+            width: 100%;
+            border-radius: 15px;
+            margin: 1.5rem 0;
+            border: 3px solid rgba(255, 255, 255, 0.15);
+            box-shadow: var(--shadow-soft);
         }
         .form-group {
             margin-bottom: 1.5rem;
@@ -114,46 +145,55 @@
     </header>
 
     <main class="container">
-        <section class="glass-card contact-form" id="contact-section">
-            <form id="contactForm" action="https://formspree.io/f/xrbkwqkq" method="POST">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" name="name" id="name" required placeholder="John Doe">
-                </div>
-                <div class="form-group">
-                    <label for="email">Your Email</label>
-                    <input type="email" name="email" id="email" required placeholder="tekelezahub@gmail.com">
-                </div>
-                <div class="form-group">
-                    <label for="interest">Area of Interest</label>
-                    <select name="interest" id="interest" style="appearance: auto; -webkit-appearance: auto;">
-                        <option value="general">General Inquiry</option>
-                        <option value="ridep-pilot">RIDEP Agricultural Pilot (Ndengu Value-Chain)</option>
-                        <option value="tech-education">Tech for Education Initiative</option>
-                        <option value="women-tech">Women in Tech Movement</option>
-                        <option value="mentorship">Mentorship & Volunteering</option>
-                        <option value="donations">Sponsorship & Partnerships</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Your Message</label>
-                    <textarea name="message" id="message" rows="5" required placeholder="Tell us how we can help..."></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-            </form>
+        <div class="contact-container">
+            <section class="glass-card contact-form" id="contact-section">
+                <form id="contactForm" action="https://formspree.io/f/xrbkwqkq" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" name="name" id="name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" name="email" id="email" required placeholder="tekelezahub@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="interest">Area of Interest</label>
+                        <select name="interest" id="interest" style="appearance: auto; -webkit-appearance: auto;">
+                            <option value="general">General Inquiry</option>
+                            <option value="ridep-pilot">RIDEP Agricultural Pilot (Ndengu Value-Chain)</option>
+                            <option value="tech-education">Tech for Education Initiative</option>
+                            <option value="publishing">Tekeleza Publishing & Research Desk</option>
+                            <option value="mentorship">Mentorship & Volunteering</option>
+                            <option value="donations">Sponsorship & Partnerships</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea name="message" id="message" rows="5" required placeholder="Tell us how we can help..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
 
-            <div class="success-message" id="successMessage">
-                <h2>ðŸŽ‰ Sent Successfully!</h2>
-                <p>Thank you for reaching out. We'll get back to you soon.</p>
-                <a href="index.html" class="btn btn-secondary" style="margin-top: 1.5rem; display: inline-block;">Back Home</a>
-            </div>
+                <div class="success-message" id="successMessage">
+                    <h2>🎉 Sent Successfully!</h2>
+                    <p>Thank you for reaching out. We'll get back to you soon.</p>
+                    <a href="index.html" class="btn btn-secondary" style="margin-top: 1.5rem; display: inline-block;">Back Home</a>
+                </div>
+            </section>
 
-            <div class="social-links">
-                <a href="https://www.linkedin.com/company/106261124" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://discord.gg/QNvAa9Yv" target="_blank" class="social-icon"><i class="fab fa-discord"></i></a>
-                <a href="https://t.me/tekelezahub" target="_blank" class="social-icon"><i class="fab fa-telegram-plane"></i></a>
-            </div>
-        </section>
+            <section class="glass-card qr-card">
+                <h3 style="margin-bottom: 0.5rem;">Join Our Community</h3>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">Scan the QR code with your WhatsApp camera or click the button below to join the Tekeleza Hub Community WhatsApp group.</p>
+                <img src="images/whatsapp-qr.jpg" alt="WhatsApp Group QR Code" class="qr-image">
+                <a href="https://chat.whatsapp.com/GCpBraduFHt6VyLoWEiqca" target="_blank" class="btn btn-primary" style="width: 100%;"><i class="fab fa-whatsapp"></i> Join WhatsApp Group</a>
+                
+                <div class="social-links" style="margin-top: 2rem;">
+                    <a href="https://www.linkedin.com/company/106261124" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://discord.gg/QNvAa9Yv" target="_blank" class="social-icon"><i class="fab fa-discord"></i></a>
+                    <a href="https://t.me/tekelezahub" target="_blank" class="social-icon"><i class="fab fa-telegram-plane"></i></a>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer>
